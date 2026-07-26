@@ -12,13 +12,15 @@ import { AiAssistantModal } from './components/AiAssistantModal';
 import { DownloadAppModal } from './components/DownloadAppModal';
 import { PrivacyPolicy } from './components/PrivacyPolicy';
 import { TermsConditions } from './components/TermsConditions';
+import { ContactUs } from './components/ContactUs';
 
-type Page = 'home' | 'privacy' | 'terms';
+type Page = 'home' | 'privacy' | 'terms' | 'contact';
 
 function getInitialPage(): Page {
   const hash = window.location.hash;
   if (hash === '#/privacy') return 'privacy';
   if (hash === '#/terms') return 'terms';
+  if (hash === '#/contact') return 'contact';
   return 'home';
 }
 
@@ -47,6 +49,10 @@ export default function App() {
 
   if (currentPage === 'terms') {
     return <TermsConditions onBack={() => navigate('home')} />;
+  }
+
+  if (currentPage === 'contact') {
+    return <ContactUs onBack={() => navigate('home')} />;
   }
 
   return (
@@ -102,6 +108,7 @@ export default function App() {
         onOpenDownloadModal={() => setDownloadModalOpen(true)}
         onOpenPrivacy={() => navigate('privacy')}
         onOpenTerms={() => navigate('terms')}
+        onOpenContact={() => navigate('contact')}
       />
 
       {/* Interactive Modals */}

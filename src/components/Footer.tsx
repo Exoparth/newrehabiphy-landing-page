@@ -7,6 +7,7 @@ interface FooterProps {
   onOpenDownloadModal: () => void;
   onOpenPrivacy: () => void;
   onOpenTerms: () => void;
+  onOpenContact: () => void;
 }
 
 export const Footer: React.FC<FooterProps> = ({
@@ -14,6 +15,7 @@ export const Footer: React.FC<FooterProps> = ({
   onOpenDownloadModal,
   onOpenPrivacy,
   onOpenTerms,
+  onOpenContact,
 }) => {
   return (
     <footer className="bg-slate-950 text-slate-300 pt-16 pb-12 border-t border-slate-800">
@@ -91,11 +93,17 @@ export const Footer: React.FC<FooterProps> = ({
               </li>
               <li className="flex items-center gap-2 text-slate-400">
                 <Phone className="w-3.5 h-3.5 text-[#22C55E]" />
-                <span>+1 (800) REHAB-AI</span>
+                <span>+91 7977639545</span>
               </li>
               <li className="flex items-center gap-2 text-slate-400">
                 <MapPin className="w-3.5 h-3.5 text-[#22C55E]" />
-                <span>San Francisco, CA & Global</span>
+                <span>Lucknow, UP, India</span>
+              </li>
+              <li>
+                <button onClick={onOpenContact} className="flex items-center gap-2 text-slate-400 hover:text-[#22C55E] transition-colors">
+                  <span className="w-3.5 h-3.5 text-[#22C55E] inline-flex items-center justify-center">→</span>
+                  Contact Us
+                </button>
               </li>
             </ul>
           </div>

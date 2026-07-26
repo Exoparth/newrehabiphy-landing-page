@@ -1,8 +1,9 @@
 import React from 'react';
+import logoImage from '../../assets/Rehabiphy512x512.png';
 
 interface LogoProps {
   className?: string;
-  variant?: 'light' | 'dark'; // light background vs dark background
+  variant?: 'light' | 'dark';
   showTagline?: boolean;
   layout?: 'horizontal' | 'vertical' | 'icon-only';
   iconSize?: number | string;
@@ -13,40 +14,13 @@ export const RehabiphyIcon: React.FC<{ className?: string; size?: number | strin
   size,
 }) => {
   return (
-    <svg
-      viewBox="0 0 200 220"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
+    <img
+      src={logoImage}
+      alt="Rehabiphy"
       className={className}
-      style={size ? { width: size, height: size } : undefined}
-    >
-      {/* Head */}
-      <circle cx="132" cy="28" r="18" fill="#22C55E" />
-
-      {/* Main Dynamic Runner Body & Lead Leg */}
-      <path
-        d="M 62 38 
-           C 92 38, 116 52, 128 72 
-           C 112 98, 92 128, 76 156 
-           C 62 182, 48 202, 34 214 
-           C 52 186, 76 148, 92 116 
-           C 106 88, 114 74, 116 66 
-           C 104 58, 86 50, 62 38 
-           Z"
-        fill="#22C55E"
-      />
-
-      {/* Trailing Right Leg Curve */}
-      <path
-        d="M 96 112 
-           C 116 110, 136 124, 140 148 
-           C 144 172, 132 196, 126 214 
-           C 118 198, 116 178, 118 162 
-           C 120 142, 106 128, 88 120 
-           Z"
-        fill="#22C55E"
-      />
-    </svg>
+      style={size ? { width: size, height: size, objectFit: 'contain' } : { objectFit: 'contain' }}
+      draggable={false}
+    />
   );
 };
 
@@ -88,7 +62,7 @@ export const RehabiphyLogo: React.FC<LogoProps> = ({
 
   // Default: Horizontal layout
   return (
-    <div className={`flex items-center gap-3 ${className}`}>
+    <div className={`flex items-center gap-2.5 ${className}`}>
       <RehabiphyIcon size={iconSize} className="shrink-0" />
       <div className="flex flex-col justify-center">
         <span className={`text-2xl font-black tracking-tight ${wordmarkColor} font-heading leading-none`}>
@@ -107,4 +81,3 @@ export const RehabiphyLogo: React.FC<LogoProps> = ({
     </div>
   );
 };
-
