@@ -1,0 +1,562 @@
+TERMS & CONDITIONS
+
+Effective Date: [DD Month YYYY]
+Version: 1.0
+
+Welcome to Rehabiphy, owned and operated by Rehabiphy Health Technologies Pvt. Ltd.
+
+Please read these Terms & Conditions ("Terms") carefully before using the Rehabiphy mobile application, website, and related services.
+
+By downloading, installing, accessing, or using Rehabiphy, you agree to be legally bound by these Terms. If you do not agree, please discontinue use of the platform.
+
+
+---
+
+1. About Rehabiphy
+
+Rehabiphy is a digital healthcare technology platform that enables users to:
+
+Book physiotherapy consultations
+
+Book home physiotherapy services
+
+Book clinic appointments
+
+Connect with verified healthcare professionals
+
+Participate in wellness and rehabilitation programs
+
+Track health habits
+
+Earn and redeem reward coins
+
+Purchase subscription plans
+
+Use AI-powered health features
+
+Access educational healthcare content
+
+
+Rehabiphy is a technology platform and does not itself provide medical treatment or physiotherapy services.
+
+
+---
+
+2. Eligibility
+
+You may use Rehabiphy only if:
+
+You are at least 18 years old; or
+
+You are using the platform under supervision of a parent or legal guardian.
+
+You are legally capable of entering into binding contracts under applicable law.
+
+
+
+---
+
+3. User Account
+
+You agree to:
+
+Provide accurate information.
+
+Maintain updated information.
+
+Keep your password confidential.
+
+Be responsible for all activities conducted through your account.
+
+
+You are solely responsible for maintaining the confidentiality of your login credentials.
+
+
+---
+
+4. Services Offered
+
+Rehabiphy may provide:
+
+Online Physiotherapy Consultation
+
+Home Visit Physiotherapy
+
+Clinic Visit Booking
+
+Rehabilitation Programs
+
+Exercise Programs
+
+Habit Tracking
+
+Wellness Programs
+
+AI Health Assistance
+
+Marketplace Services
+
+Reward Programs
+
+Corporate Wellness Services
+
+
+Services may vary depending upon location.
+
+
+---
+
+5. Healthcare Disclaimer
+
+Rehabiphy does not practice medicine.
+
+Healthcare services available through the platform are independently provided by licensed healthcare professionals.
+
+Rehabiphy:
+
+Does not diagnose diseases.
+
+Does not prescribe medicines.
+
+Does not guarantee treatment outcomes.
+
+Does not replace emergency medical care.
+
+
+Users must immediately seek emergency medical services during any medical emergency.
+
+
+---
+
+6. Marketplace
+
+Rehabiphy acts solely as an intermediary between users and healthcare providers.
+
+Healthcare providers are independent professionals.
+
+Rehabiphy is not responsible for:
+
+Treatment quality
+
+Clinical outcomes
+
+Professional negligence
+
+Misconduct of providers
+
+Delays caused by providers
+
+
+
+---
+
+7. Booking Policy
+
+Appointments are subject to:
+
+Provider availability
+
+Confirmation
+
+Successful payment (where applicable)
+
+
+Rehabiphy reserves the right to modify or cancel appointments due to operational reasons.
+
+
+---
+
+8. Home Visit Services
+
+For home visits:
+
+Users agree to provide:
+
+Correct address
+
+Safe treatment environment
+
+Accurate medical history
+
+
+If the therapist feels unsafe or the information provided is inaccurate, the appointment may be cancelled.
+
+
+---
+
+9. Online Consultation
+
+Users acknowledge that:
+
+Internet quality may affect consultation.
+
+Technical issues may interrupt sessions.
+
+Online consultations have limitations compared to physical examinations.
+
+
+
+---
+
+10. Payments
+
+Payments may be processed through secure third-party payment gateways including PayU.
+
+By making payments, you agree that:
+
+Applicable taxes may be charged.
+
+Platform fees may apply.
+
+Payment gateway charges may apply where applicable.
+
+
+Rehabiphy does not store complete debit or credit card information.
+
+
+---
+
+11. Subscription Plans
+
+Certain services require paid subscriptions.
+
+Subscription benefits may include:
+
+Unlimited habit tracking
+
+Premium rehabilitation programs
+
+Priority booking
+
+Additional reward benefits
+
+Exclusive wellness content
+
+
+Subscription fees are non-transferable.
+
+
+---
+
+12. Auto Renewal
+
+Where applicable, subscriptions may automatically renew until cancelled.
+
+Users may cancel renewal through the respective app store or payment provider before the renewal date.
+
+
+---
+
+13. Cancellation & Refund Policy
+
+Cancellation and refund eligibility depends on:
+
+Type of service
+
+Time of cancellation
+
+Provider availability
+
+Applicable laws
+
+
+Refunds, if approved, will generally be processed to the original payment method within a reasonable period.
+
+Platform fees, payment gateway charges, and taxes may be non-refundable where permitted by law.
+
+
+---
+
+14. Reward Coins
+
+Rehabiphy may provide reward coins through various activities.
+
+Reward coins:
+
+Have no cash value.
+
+Cannot be exchanged for money.
+
+May expire.
+
+May be withdrawn at any time.
+
+May be modified without prior notice.
+
+Cannot be transferred between users unless specifically permitted.
+
+
+Fraudulent earning of reward coins may result in account suspension.
+
+
+---
+
+15. AI Features
+
+Rehabiphy may use Artificial Intelligence for:
+
+Exercise recommendations
+
+Habit suggestions
+
+Educational assistance
+
+Health insights
+
+Recovery monitoring
+
+
+AI outputs:
+
+Are informational only.
+
+Are not medical advice.
+
+Should not replace consultation with qualified healthcare professionals.
+
+
+
+---
+
+16. User Responsibilities
+
+You agree not to:
+
+Provide false medical information.
+
+Misuse the platform.
+
+Harass healthcare professionals.
+
+Upload unlawful content.
+
+Attempt unauthorized access.
+
+Reverse engineer the application.
+
+Use bots or automated systems.
+
+Share another person's confidential information without consent.
+
+
+
+---
+
+17. Healthcare Provider Responsibilities
+
+Healthcare providers agree to:
+
+Maintain valid licenses.
+
+Provide accurate professional information.
+
+Deliver services ethically.
+
+Maintain patient confidentiality.
+
+Follow applicable healthcare regulations.
+
+
+
+---
+
+18. Health Data
+
+Users understand that health-related information shared on Rehabiphy may be processed in accordance with the Privacy Policy.
+
+
+---
+
+19. Intellectual Property
+
+All content available on Rehabiphy including:
+
+Logo
+
+Design
+
+Source code
+
+Graphics
+
+Videos
+
+Articles
+
+AI models
+
+Databases
+
+Trademarks
+
+
+remain the exclusive property of Rehabiphy Health Technologies Pvt. Ltd.
+
+No content may be copied, reproduced, modified, distributed, or commercially exploited without prior written permission.
+
+
+---
+
+20. User Content
+
+Any reviews, comments, photographs, or other content uploaded by users remain the user's responsibility.
+
+By uploading content, you grant Rehabiphy a non-exclusive, worldwide, royalty-free license to use, reproduce, modify, and display such content for operating and improving the platform.
+
+
+---
+
+21. Privacy
+
+Use of Rehabiphy is governed by the Rehabiphy Privacy Policy.
+
+By using the platform, you consent to the collection, processing, and use of your information as described therein.
+
+
+---
+
+22. Third-Party Services
+
+Rehabiphy may integrate third-party services including but not limited to:
+
+PayU
+
+Google Play Services
+
+Apple App Store
+
+Firebase
+
+Google Maps
+
+Health Connect
+
+Apple Health
+
+Analytics providers
+
+SMS and email providers
+
+
+Use of these services is subject to their respective terms and privacy policies.
+
+
+---
+
+23. Availability
+
+Rehabiphy does not guarantee uninterrupted availability.
+
+Services may be temporarily unavailable due to:
+
+Maintenance
+
+Technical failures
+
+Internet disruptions
+
+Force majeure events
+
+
+
+---
+
+24. Limitation of Liability
+
+To the fullest extent permitted by law, Rehabiphy Health Technologies Pvt. Ltd., its directors, employees, affiliates, and partners shall not be liable for:
+
+Medical outcomes
+
+Treatment effectiveness
+
+Loss of health data caused by user actions
+
+Business losses
+
+Indirect damages
+
+Consequential damages
+
+Loss of profits
+
+Technical interruptions
+
+Third-party actions
+
+
+The aggregate liability of Rehabiphy shall not exceed the amount paid by the user for the specific service giving rise to the claim.
+
+
+---
+
+25. Indemnification
+
+You agree to indemnify and hold harmless Rehabiphy Health Technologies Pvt. Ltd., its officers, employees, affiliates, and partners from any claims, damages, liabilities, costs, or expenses arising from:
+
+Your breach of these Terms.
+
+Your misuse of the platform.
+
+Your violation of applicable laws.
+
+Your infringement of third-party rights.
+
+
+
+---
+
+26. Suspension and Termination
+
+Rehabiphy may suspend or terminate accounts without prior notice for:
+
+Fraud
+
+Abuse
+
+Misrepresentation
+
+Illegal activity
+
+Repeated policy violations
+
+Threats to platform security
+
+
+
+---
+
+27. Force Majeure
+
+Rehabiphy shall not be liable for any delay or failure in performance caused by events beyond its reasonable control, including natural disasters, pandemics, governmental actions, strikes, power failures, internet outages, or other force majeure events.
+
+
+---
+
+28. Governing Law and Jurisdiction
+
+These Terms shall be governed by the laws of India.
+
+Any disputes shall be subject to the exclusive jurisdiction of the competent courts located in Lucknow, Uttar Pradesh, India.
+
+
+---
+
+29. Changes to Terms
+
+Rehabiphy may update these Terms from time to time.
+
+Material changes will be notified through the application or website.
+
+Continued use of the platform after such updates constitutes acceptance of the revised Terms.
+
+
+---
+
+30. Contact Information
+
+Rehabiphy Health Technologies Pvt. Ltd.
+
+Email: support@rehabiphy.com
+Website: https://www.rehabiphy.com
+
+For legal notices, grievances, or questions regarding these Terms, users may contact the above support channel.

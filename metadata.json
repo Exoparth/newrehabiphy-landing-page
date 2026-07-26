@@ -1,0 +1,6 @@
+{
+  "name": "Rehabiphy",
+  "description": "AI-powered physiotherapy and rehabilitation platform. From setback to comeback.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

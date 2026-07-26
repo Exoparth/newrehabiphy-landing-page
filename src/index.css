@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #1E293B;
+  }
+  
+  h1, h2, h3, h4, .font-heading {
+    font-family: 'Syne', 'Outfit', sans-serif;
+    letter-spacing: -0.02em;
+  }
+
+  .font-serif-italic {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .font-syne {
+    font-family: 'Syne', sans-serif;
+  }
+}
+
+/* Custom Editorial & Medtech Styling Utilities */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(15, 118, 110, 0.12);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 12px 35px -12px rgba(15, 118, 110, 0.08);
+}
+
+.glass-dark {
+  background: rgba(11, 19, 43, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.glow-teal {
+  box-shadow: 0 0 50px -10px rgba(15, 118, 110, 0.25);
+}
+
+.glow-green {
+  box-shadow: 0 0 40px -8px rgba(34, 197, 94, 0.3);
+}
+
+/* Subtle background grid pattern */
+.bg-grid-pattern {
+  background-image: radial-gradient(rgba(15, 118, 110, 0.1) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.bg-dot-matrix {
+  background-image: radial-gradient(rgba(15, 118, 110, 0.15) 1.5px, transparent 1.5px);
+  background-size: 20px 20px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F8FFFC;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0F766E;
+}
+
+@keyframes pulse-slow {
+  0%, 100% { transform: scale(1); opacity: 0.85; }
+  50% { transform: scale(1.04); opacity: 1; }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 4s ease-in-out infinite;
+}
+
+/* Smooth focus rings for accessibility */
+*:focus-visible {
+  outline: 2px solid #0F766E;
+  outline-offset: 2px;
+}
+
+

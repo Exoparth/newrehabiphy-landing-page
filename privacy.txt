@@ -1,0 +1,536 @@
+Privacy Policy
+
+**Rehabiphy Health Technologies Private Limited**
+
+**Effective Date:** 23 July 2026
+**Version:** 1.0
+
+---
+
+# PRIVACY POLICY
+
+Welcome to **Rehabiphy**.
+
+Rehabiphy Health Technologies Private Limited ("**Rehabiphy**", "**Company**", "**we**", "**our**", or "**us**") operates the Rehabiphy mobile application, website, and related digital healthcare services.
+
+We value your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, store, disclose, process, and protect your information when you use Rehabiphy.
+
+By using Rehabiphy, you acknowledge that you have read and understood this Privacy Policy and consent to the practices described herein.
+
+This Privacy Policy complies with applicable Indian laws including the Digital Personal Data Protection Act, 2023 (DPDP Act), the Information Technology Act, 2000, and, where applicable, internationally accepted privacy principles.
+
+---
+
+# 1. About Rehabiphy
+
+Rehabiphy is a digital healthcare ecosystem that provides:
+
+* Physiotherapy consultations
+* Home physiotherapy services
+* Clinic appointment booking
+* Online consultations
+* Rehabilitation programs
+* Habit tracking
+* Health rewards system
+* AI-powered health insights
+* Healthcare marketplace
+* Wellness monitoring
+* Fitness and rehabilitation services
+
+---
+
+# 2. Definitions
+
+For this Privacy Policy:
+
+**Personal Data**
+means any information capable of identifying an individual.
+
+**Sensitive Personal Data**
+includes health-related information, medical history, rehabilitation data, and similar information where applicable under law.
+
+**Health Data**
+includes:
+
+* Pain information
+* Medical history
+* Injuries
+* Diagnoses
+* Mobility scores
+* Exercise logs
+* Recovery progress
+* Physiotherapy assessments
+* Health Connect information
+* Activity tracking
+
+**Healthcare Provider**
+
+Includes:
+
+* Physiotherapists
+* Fitness Trainers
+* Rehabilitation Specialists
+* Wellness Professionals
+* Clinics
+
+**Marketplace Partner**
+
+Any service provider offering healthcare or wellness services through Rehabiphy.
+
+---
+
+# 3. Information We Collect
+
+Depending on how you use Rehabiphy, we may collect the following information.
+
+## A. Account Information
+
+* Name
+* Mobile Number
+* Email Address
+* Gender
+* Date of Birth
+* Profile Photo
+* Address
+* City
+* State
+* PIN Code
+
+---
+
+## B. Health Information
+
+You may voluntarily provide:
+
+* Medical history
+* Injury details
+* Surgery history
+* Pain assessment
+* Movement limitations
+* Physiotherapy reports
+* Prescriptions
+* X-rays
+* MRI Reports
+* CT Scan Reports
+* Exercise adherence
+* Rehabilitation progress
+* Body measurements
+* Weight
+* Height
+
+---
+
+## C. Activity Data
+
+If enabled, Rehabiphy may collect:
+
+* Daily Steps
+* Walking Distance
+* Cycling Distance
+* Calories Burned
+* Active Minutes
+* Sleep Duration
+* Hydration Logs
+* Reading Habit
+* Breathing Exercise Completion
+* Workout Completion
+
+---
+
+## D. Device Information
+
+* Device ID
+* Android ID
+* iOS Device Identifier
+* IP Address
+* Operating System
+* App Version
+* Device Model
+* Language
+* Time Zone
+* Network Information
+
+---
+
+## E. Location Information
+
+With your permission, we may collect:
+
+* Precise GPS location
+* Approximate location
+* City
+* State
+
+Location is used for:
+
+* Home physiotherapy booking
+* Nearby clinics
+* Nearby physiotherapists
+* Emergency support
+* Marketplace recommendations
+
+You may disable location permission at any time.
+
+---
+
+## F. Health Connect Data
+
+If you choose to connect Google Health Connect or Apple Health, Rehabiphy may access only the data categories you explicitly authorize, such as:
+
+* Steps
+* Walking Distance
+* Cycling
+* Calories
+* Sleep
+* Exercise Sessions
+* Activity Records
+
+Health Connect permissions are completely optional.
+
+---
+
+## G. Camera & Storage
+
+With your permission, we may access:
+
+* Camera
+* Gallery
+* File Storage
+
+This allows you to:
+
+* Upload prescriptions
+* Upload reports
+* Upload profile photos
+* Upload medical documents
+
+---
+
+## H. Payment Information
+
+Payments are processed securely through **PayU**.
+
+Rehabiphy does **not** store:
+
+* Credit Card Number
+* Debit Card Number
+* CVV
+* UPI PIN
+* Net Banking Password
+
+We may receive:
+
+* Transaction ID
+* Payment Status
+* Amount Paid
+* Payment Timestamp
+* Order Reference
+
+---
+
+## I. Customer Support Information
+
+When contacting support, we may collect:
+
+* Emails
+* Chat Messages
+* Phone Calls
+* Feedback
+* Complaint Details
+
+---
+
+# 4. Permissions Used
+
+Rehabiphy may request the following permissions:
+
+| Permission        | Purpose                                  |
+| ----------------- | ---------------------------------------- |
+| Camera            | Upload profile photo and medical reports |
+| Storage           | Upload files and reports                 |
+| Internet          | Core app functionality                   |
+| Notifications     | Appointment reminders                    |
+| Health Connect    | Activity tracking                        |
+| Physical Activity | Step counting                            |
+| Location          | Home visit booking                       |
+| Phone             | OTP verification (where applicable)      |
+
+---
+
+# 5. How We Use Your Information
+
+Your information is used to:
+
+* Create your account
+* Book appointments
+* Connect you with physiotherapists
+* Provide AI-generated health insights
+* Recommend rehabilitation programs
+* Track recovery progress
+* Track habits
+* Award Rehabiphy Coins
+* Improve services
+* Detect fraud
+* Process payments
+* Send reminders
+* Customer support
+* Analytics
+* Security
+* Legal compliance
+
+---
+
+# 6. AI Services
+
+Rehabiphy may use Artificial Intelligence to:
+
+* Suggest rehabilitation exercises
+* Analyze recovery progress
+* Recommend habits
+* Generate personalized insights
+* Improve user engagement
+* Personalize notifications
+
+AI-generated recommendations are informational only and do not replace professional medical advice.
+
+Clinical decisions should always be made in consultation with qualified healthcare professionals.
+
+---
+
+# 7. Rehabiphy Coins & Habit Tracking
+
+When you participate in:
+
+* Walking
+* Cycling
+* Hydration
+* Sleep Tracking
+* Reading
+* Breathing Exercises
+
+Rehabiphy may collect completion data to:
+
+* Calculate rewards
+* Award Rehabiphy Coins
+* Maintain leaderboards
+* Prevent fraud
+* Detect fake activity
+
+---
+
+# 8. Sharing of Information
+
+We may share your information only where necessary with:
+
+### Healthcare Providers
+
+To deliver treatment.
+
+### Clinics
+
+For appointment management.
+
+### Fitness Trainers
+
+If you book their services.
+
+### Payment Gateway
+
+PayU for secure payment processing.
+
+### Cloud Service Providers
+
+For secure hosting and backups.
+
+### SMS & Email Providers
+
+For OTPs, reminders, invoices, and notifications.
+
+### Analytics Providers
+
+To improve app performance and user experience.
+
+### Government Authorities
+
+Where required by law.
+
+We do **not** sell your personal information.
+
+---
+
+# 9. Data Security
+
+We implement industry-standard safeguards including:
+
+* Encryption in transit (TLS/SSL)
+* Encryption at rest
+* Secure authentication
+* Access controls
+* Role-based permissions
+* Secure cloud infrastructure
+* Audit logging
+* Regular security monitoring
+
+While we strive to protect your information, no system can guarantee absolute security.
+
+---
+
+# 10. Data Retention
+
+We retain personal information only for as long as necessary to:
+
+* Provide services
+* Comply with legal obligations
+* Resolve disputes
+* Enforce agreements
+
+Upon account deletion, personal data will be deleted or anonymized within a reasonable period, except where retention is required by law.
+
+---
+
+# 11. Your Rights
+
+Subject to applicable law, you may:
+
+* Access your information
+* Correct inaccurate information
+* Update your profile
+* Delete your account
+* Withdraw consent
+* Download your data (where available)
+* Request restriction of processing
+* Object to certain processing activities
+
+Requests can be made through the app or by contacting us.
+
+---
+
+# 12. Children's Privacy
+
+Rehabiphy is not intended for children under the age permitted by applicable law without parental or guardian consent.
+
+If we become aware that personal information has been collected from a child without appropriate consent, we will delete such information promptly.
+
+---
+
+# 13. Cookies and Similar Technologies
+
+Our website and services may use:
+
+* Cookies
+* SDKs
+* Local storage
+* Device identifiers
+* Analytics tools
+
+These help us:
+
+* Remember preferences
+* Improve performance
+* Measure engagement
+* Enhance security
+
+You can manage cookie preferences through your browser settings where applicable.
+
+---
+
+# 14. Third-Party Services
+
+Rehabiphy may integrate with third-party services including, but not limited to:
+
+* PayU
+* Google Health Connect
+* Apple Health (if applicable)
+* Firebase
+* Google Analytics for Firebase
+* Google Maps
+* SMS gateway providers
+* Email service providers
+* Cloud hosting providers
+
+Each third-party service has its own privacy policy, and we encourage you to review them.
+
+---
+
+# 15. International Data Transfers
+
+If personal data is processed or stored outside India, we will implement appropriate safeguards in accordance with applicable laws.
+
+---
+
+# 16. Account Deletion
+
+Users may request account deletion through the app or by contacting us.
+
+After verification:
+
+* Personal information will be deleted or anonymized, except where legal obligations require retention.
+* Transaction records may be retained for accounting, taxation, fraud prevention, or regulatory compliance.
+
+---
+
+# 17. Notifications
+
+Rehabiphy may send:
+
+* Appointment reminders
+* Exercise reminders
+* Medication reminders (if enabled)
+* Health tips
+* Promotional offers
+* Coin and reward updates
+* Habit reminders
+* System announcements
+
+You can manage notification preferences in the app settings.
+
+---
+
+# 18. Changes to This Privacy Policy
+
+We may update this Privacy Policy from time to time.
+
+Material changes will be communicated through the app, website, email, or other appropriate means.
+
+The updated version will become effective on the date specified at the top of this policy.
+
+---
+
+# 19. Disclaimer
+
+Rehabiphy provides technology-enabled healthcare support and wellness services. AI-generated suggestions, educational content, and wellness recommendations are intended for informational purposes only and should not be considered a substitute for professional medical diagnosis, treatment, or emergency care.
+
+Always seek advice from a qualified healthcare professional regarding medical conditions or treatment decisions.
+
+---
+
+# 20. Contact Us
+
+If you have any questions, concerns, requests, or complaints regarding this Privacy Policy or the processing of your personal information, please contact:
+
+**Rehabiphy Health Technologies Private Limited**
+
+**Email:** [privacy@rehabiphy.com](mailto:privacy@rehabiphy.com)
+**Support:** [support@rehabiphy.com](mailto:support@rehabiphy.com)
+**Website:** [https://rehabiphy.com](https://rehabiphy.com) *(replace with your live website if different)*
+
+---
+
+## Google Play Store Data Safety Coverage
+
+This policy covers the data types typically disclosed in the Google Play Data Safety form, including:
+
+* Personal Information
+* Contact Information
+* Health and Fitness Data
+* Financial Transaction Information
+* App Activity
+* Device or Other IDs
+* Location
+* Photos and Files
+* Messages (support only)
+* Crash Logs
+* Diagnostics
+* Performance Data
+* User-Generated Content
+* Security and Fraud Prevention Data
