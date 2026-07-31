@@ -35,7 +35,7 @@ export const Footer: React.FC<FooterProps> = ({
 
             <div className="flex items-center gap-2 text-xs text-slate-400 pt-1">
               <ShieldCheck className="w-4 h-4 text-[#22C55E]" />
-              <span>HIPAA Compliant • Encrypted Health Data</span>
+              <span>Secure & Encrypted Health Data</span>
             </div>
           </div>
 
@@ -119,8 +119,6 @@ export const Footer: React.FC<FooterProps> = ({
             <button onClick={onOpenPrivacy} className="hover:text-slate-300 transition-colors">Privacy Policy</button>
             <span>•</span>
             <button onClick={onOpenTerms} className="hover:text-slate-300 transition-colors">Terms of Service</button>
-            <span>•</span>
-            <a href="#" className="hover:text-slate-300 transition-colors">HIPAA Compliance</a>
           </div>
         </div>
 

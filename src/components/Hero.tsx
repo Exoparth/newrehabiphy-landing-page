@@ -118,9 +118,9 @@ export const Hero: React.FC<HeroProps> = ({
               <div className="space-y-0.5">
                 <div className="flex items-center gap-1 text-slate-900 font-extrabold text-xl font-heading">
                   <Shield className="w-5 h-5 text-[#22C55E]" />
-                  <span>HIPAA</span>
+                  <span>Secure</span>
                 </div>
-                <p className="text-xs text-slate-500 font-medium">Encrypted & Qualified Physiotherapists</p>
+                <p className="text-xs text-slate-500 font-medium">Encrypted Health Data</p>
               </div>
             </div>
 

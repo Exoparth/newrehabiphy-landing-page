@@ -155,7 +155,7 @@ export const AudienceTab: React.FC<AudienceTabProps> = ({
                     { title: 'Automated ROM Charting', desc: 'AI auto-logs joint angles and rep compliance, saving 45 mins of daily paperwork.' },
                     { title: '88% Patient Adherence', desc: 'Dynamic mobile habit tracking dramatically increases patient plan completion.' },
                     { title: 'Flexible Home & Tele-Care', desc: 'Set your own consultation hours, virtual slots, or local home visit zones.' },
-                    { title: 'Seamless Billing & EHR Sync', desc: 'Instant HIPAA-compliant medical notes and automated payout transfers.' }
+                    { title: 'Seamless Billing & EHR Sync', desc: 'Instant secure medical notes and automated payout transfers.' }
                   ].map((item, idx) => (
                     <div key={idx} className="p-4 bg-[#F8FFFC] rounded-2xl border border-[#0F766E]/15 space-y-1">
                       <div className="flex items-center gap-2 font-bold text-slate-900 text-sm font-heading">
@@ -182,7 +182,7 @@ export const AudienceTab: React.FC<AudienceTabProps> = ({
               <div className="lg:col-span-5 bg-slate-900 text-white rounded-3xl p-6 border border-slate-800 shadow-2xl space-y-4">
                 <div className="flex items-center justify-between pb-3 border-b border-slate-800">
                   <span className="text-xs font-bold text-[#22C55E]">PHYSICIAN & PRACTICE DASHBOARD</span>
-                  <span className="text-[10px] font-mono text-slate-400">HIPAA Certified</span>
+                  <span className="text-[10px] font-mono text-slate-400">Fully Encrypted</span>
                 </div>
 
                 <div className="space-y-3">
