@@ -1,14 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Sparkles, Users, Activity, TrendingUp, CheckCircle2, ArrowRight, Shield, Zap } from 'lucide-react';
+import { Sparkles, Users, Activity, TrendingUp, CheckCircle2, Shield, Zap } from 'lucide-react';
 
-interface WhyRehabiphyProps {
-  onOpenAiModal: () => void;
-}
-
-export const WhyRehabiphy: React.FC<WhyRehabiphyProps> = ({
-  onOpenAiModal,
-}) => {
+export const WhyRehabiphy: React.FC = () => {
   const [activePillar, setActivePillar] = useState<number>(0);
   const [selectedAngle, setSelectedAngle] = useState<number>(145);
 
@@ -217,7 +211,7 @@ export const WhyRehabiphy: React.FC<WhyRehabiphyProps> = ({
                 </div>
 
                 {/* Live Biometric Metrics Row */}
-                <div className="grid grid-cols-3 gap-3 pt-2">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
                   {currentPillar.metrics.map((metric, i) => (
                     <div key={i} className="p-3.5 bg-slate-900/90 rounded-2xl border border-slate-800 space-y-1">
                       <p className="text-[10px] uppercase font-mono text-slate-400">{metric.label}</p>
@@ -234,17 +228,6 @@ export const WhyRehabiphy: React.FC<WhyRehabiphyProps> = ({
                       <span>{item}</span>
                     </div>
                   ))}
-                </div>
-
-                {/* Action Trigger */}
-                <div className="pt-2">
-                  <button
-                    onClick={onOpenAiModal}
-                    className="inline-flex items-center gap-2 px-6 py-3 text-xs font-bold text-slate-950 bg-[#22C55E] hover:bg-[#16a34a] rounded-full transition-all shadow-md group"
-                  >
-                    <span>Test AI Motion Assessment</span>
-                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                  </button>
                 </div>
 
               </motion.div>

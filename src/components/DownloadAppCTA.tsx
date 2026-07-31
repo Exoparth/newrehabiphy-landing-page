@@ -1,24 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'motion/react';
-import { Smartphone, Download, QrCode, Send, CheckCircle2, Star, Sparkles, ShieldCheck } from 'lucide-react';
+import { Smartphone, Download, QrCode, Star, Sparkles, ShieldCheck } from 'lucide-react';
 
 interface DownloadAppCTAProps {
   onOpenDownloadModal: () => void;
 }
 
 export const DownloadAppCTA: React.FC<DownloadAppCTAProps> = ({ onOpenDownloadModal }) => {
-  const [phoneNumber, setPhoneNumber] = useState('');
-  const [sentStatus, setSentStatus] = useState(false);
-
-  const handleSendLink = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!phoneNumber) return;
-    setSentStatus(true);
-    setTimeout(() => {
-      setSentStatus(false);
-      setPhoneNumber('');
-    }, 4000);
-  };
 
   return (
     <section className="py-20 lg:py-28 bg-[#0F766E] text-white relative overflow-hidden">
@@ -68,45 +56,11 @@ export const DownloadAppCTA: React.FC<DownloadAppCTAProps> = ({ onOpenDownloadMo
               </button>
             </div>
 
-            {/* Quick SMS App Link Form */}
-            <div className="pt-4 max-w-md">
-              <p className="text-xs text-emerald-200 font-medium mb-2">
-                Or enter your phone number to receive an instant download link:
-              </p>
-
-              <form onSubmit={handleSendLink} className="flex items-center gap-2">
-                <input
-                  type="tel"
-                  placeholder="+1 (555) 000-0000"
-                  value={phoneNumber}
-                  onChange={(e) => setPhoneNumber(e.target.value)}
-                  className="flex-1 px-4 py-3 text-xs bg-white/10 backdrop-blur-md border border-white/20 rounded-xl text-white placeholder-emerald-200/60 outline-none focus:border-[#22C55E]"
-                />
-                <button
-                  type="submit"
-                  className="px-5 py-3 text-xs font-bold text-slate-950 bg-[#22C55E] hover:bg-[#16a34a] rounded-xl transition-colors shrink-0 flex items-center gap-1.5"
-                >
-                  <Send className="w-3.5 h-3.5" />
-                  Send Link
-                </button>
-              </form>
-
-              {sentStatus && (
-                <p className="text-xs text-[#22C55E] font-bold mt-2 flex items-center gap-1">
-                  <CheckCircle2 className="w-3.5 h-3.5" /> SMS download link sent successfully!
-                </p>
-              )}
-            </div>
-
             {/* App Rating Badges */}
             <div className="pt-4 flex items-center gap-6 text-xs text-emerald-100">
               <div className="flex items-center gap-1">
                 <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
                 <span className="font-bold text-white">4.9 / 5.0 Rating</span>
-              </div>
-              <span>•</span>
-              <div>
-                <span className="font-bold text-white">500,000+ Downloads</span>
               </div>
             </div>
 

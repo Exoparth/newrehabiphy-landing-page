@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'motion/react';
 import {
   Mail,
-  Phone,
   MapPin,
   Globe,
   Clock,
@@ -164,10 +163,6 @@ export const ContactUs: React.FC<ContactUsProps> = ({ onBack }) => {
                 <Mail className="w-3.5 h-3.5 text-[#22C55E]" />
                 Support@rehabiphy.com
               </span>
-              <span className="flex items-center gap-1.5">
-                <Phone className="w-3.5 h-3.5 text-[#22C55E]" />
-                +91 7977639545
-              </span>
             </div>
           </motion.div>
         </div>
@@ -189,7 +184,7 @@ export const ContactUs: React.FC<ContactUsProps> = ({ onBack }) => {
                 Contact Information
               </h2>
               <p className="text-sm text-slate-500 leading-relaxed">
-                Visit our clinic, call us, or send us an email. We're here to help with your rehabilitation journey.
+                Visit our clinic or send us an email. We're here to help with your rehabilitation journey.
               </p>
             </div>
 
@@ -228,23 +223,7 @@ export const ContactUs: React.FC<ContactUsProps> = ({ onBack }) => {
               <ChevronRight className="w-4 h-4 text-slate-300 group-hover:text-[#0F766E] transition-colors mt-1 shrink-0" />
             </a>
 
-            {/* Phone Card */}
-            <a
-              href="tel:+917977639545"
-              className="glass-card rounded-2xl p-5 flex items-start gap-3 hover:shadow-lg transition-all group block"
-            >
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0F766E] to-[#115E59] flex items-center justify-center text-white shrink-0 shadow-md shadow-[#0F766E]/20">
-                <Phone className="w-5 h-5" />
-              </div>
-              <div className="flex-1 min-w-0">
-                <h3 className="text-sm font-bold text-slate-800">Call Us</h3>
-                <p className="text-xs text-[#0F766E] font-semibold mt-1 group-hover:underline">
-                  +91 7977639545
-                </p>
-                <p className="text-[11px] text-slate-400 mt-0.5">Mon – Sat, 9:00 AM – 7:00 PM IST</p>
-              </div>
-              <ChevronRight className="w-4 h-4 text-slate-300 group-hover:text-[#0F766E] transition-colors mt-1 shrink-0" />
-            </a>
+
 
             {/* Website Card */}
             {/* <a
@@ -303,10 +282,10 @@ export const ContactUs: React.FC<ContactUsProps> = ({ onBack }) => {
               </div>
               <iframe
                 title="Rehabiphy Clinic Location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3561.5!2d80.94!3d26.85!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sSector%2012A%2C%20Lucknow%2C%20UP%20226025!5e0!3m2!1sen!2sin!4v1690000000000"
+                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d629.7416860019109!2d80.97082441252972!3d26.764890023631278!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjbCsDQ1JzUzLjgiTiA4MMKwNTgnMTYuNiJF!5e0!3m2!1sen!2sin!4v1785519504377!5m2!1sen!2sin"
                 className="w-full h-52 border-0"
                 loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
+                referrerPolicy="strict-origin-when-cross-origin"
                 allowFullScreen
               />
             </div>
@@ -499,19 +478,12 @@ export const ContactUs: React.FC<ContactUsProps> = ({ onBack }) => {
               className="mt-6 glass-card rounded-2xl p-5 flex flex-col sm:flex-row items-center justify-between gap-4"
             >
               <div className="text-center sm:text-left">
-                <p className="text-sm font-bold text-slate-800">Prefer to talk directly?</p>
+                <p className="text-sm font-bold text-slate-800">Need immediate assistance?</p>
                 <p className="text-xs text-slate-500 mt-0.5">
-                  Call us or send an email for immediate assistance.
+                  Send us an email and our team will get back to you within 24 hours.
                 </p>
               </div>
               <div className="flex items-center gap-3">
-                <a
-                  href="tel:+917977639545"
-                  className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-bold text-[#0F766E] bg-[#0F766E]/8 hover:bg-[#0F766E]/15 border border-[#0F766E]/20 rounded-full transition-colors"
-                >
-                  <Phone className="w-3.5 h-3.5" />
-                  Call Now
-                </a>
                 <a
                   href="mailto:Support@rehabiphy.com"
                   className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-bold text-white bg-gradient-to-r from-[#0F766E] to-[#115E59] rounded-full shadow-md shadow-[#0F766E]/25 hover:shadow-lg transition-all"

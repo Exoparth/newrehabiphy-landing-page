@@ -72,9 +72,7 @@ export default function App() {
         />
 
         {/* 3. Why Rehabiphy Section */}
-        <WhyRehabiphy
-          onOpenAiModal={() => setAiModalOpen(true)}
-        />
+        <WhyRehabiphy />
 
         {/* 4. How It Works Section */}
         <HowItWorks
@@ -82,9 +80,7 @@ export default function App() {
         />
 
         {/* 5. Key Features Section */}
-        <KeyFeatures
-          onOpenAiModal={() => setAiModalOpen(true)}
-        />
+        <KeyFeatures />
 
         {/* Audience Value Propositions (For Patients & Physiotherapists) */}
         <AudienceTab

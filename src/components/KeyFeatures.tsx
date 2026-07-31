@@ -19,13 +19,7 @@ import {
   ArrowRight
 } from 'lucide-react';
 
-interface KeyFeaturesProps {
-  onOpenAiModal: () => void;
-}
-
-export const KeyFeatures: React.FC<KeyFeaturesProps> = ({
-  onOpenAiModal,
-}) => {
+export const KeyFeatures: React.FC = () => {
   const [selectedFeatureId, setSelectedFeatureId] = useState<string>('consultation');
 
   // Interactive AI Assistant mini-demo state
@@ -170,15 +164,7 @@ export const KeyFeatures: React.FC<KeyFeaturesProps> = ({
               </div>
             )}
 
-            <div className="pt-2 flex flex-wrap gap-3">
-              <button
-                onClick={onOpenAiModal}
-                className="inline-flex items-center gap-2 px-6 py-3.5 text-xs font-bold text-white bg-[#0F766E] hover:bg-[#115E59] rounded-full shadow-md transition-all"
-              >
-                <Sparkles className="w-4 h-4 text-[#22C55E]" />
-                <span>Launch Interactive Assistant</span>
-              </button>
-            </div>
+
           </div>
 
           {/* Right Column: AI Assistant Console / Feature Card */}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShieldCheck, Mail, Phone, MapPin, Heart } from 'lucide-react';
+import { ShieldCheck, Mail, MapPin, Heart } from 'lucide-react';
 import { RehabiphyLogo } from './RehabiphyLogo';
 
 interface FooterProps {
@@ -90,10 +90,6 @@ export const Footer: React.FC<FooterProps> = ({
               <li className="flex items-center gap-2 text-slate-400">
                 <Mail className="w-3.5 h-3.5 text-[#22C55E]" />
                 <span>support@rehabiphy.com</span>
-              </li>
-              <li className="flex items-center gap-2 text-slate-400">
-                <Phone className="w-3.5 h-3.5 text-[#22C55E]" />
-                <span>+91 7977639545</span>
               </li>
               <li className="flex items-center gap-2 text-slate-400">
                 <MapPin className="w-3.5 h-3.5 text-[#22C55E]" />

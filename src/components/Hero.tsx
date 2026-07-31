@@ -62,7 +62,7 @@ export const Hero: React.FC<HeroProps> = ({
               <Sparkles className="w-3.5 h-3.5 text-[#22C55E]" />
               <span>Next-Gen AI Motion Computer Vision</span>
               <span className="text-slate-300">|</span>
-              <span className="text-slate-600 font-normal">Licensed Physio Certified</span>
+              <span className="text-slate-600 font-normal">Licensed Qualified Physiotherapist</span>
             </div>
 
             {/* Main Headline */}
@@ -442,7 +442,7 @@ export const Hero: React.FC<HeroProps> = ({
                         <div className="relative rounded-2xl bg-slate-900 border border-slate-700 overflow-hidden flex-1 flex flex-col">
                           <img
                             src="https://images.unsplash.com/photo-1594824813566-788426a8d6b1?auto=format&fit=crop&q=80&w=400"
-                            alt="Sarah Jenkins"
+                            alt="Pooja Patel"
                             referrerPolicy="no-referrer"
                             className="w-full h-44 object-cover object-top"
                           />
@@ -453,7 +453,7 @@ export const Hero: React.FC<HeroProps> = ({
                           
                           <div className="p-3 bg-slate-900/95 flex-1 flex flex-col justify-between">
                             <div>
-                              <h5 className="text-xs font-bold text-white font-heading">Sarah Jenkins, Licensed Physiotherapist</h5>
+                              <h5 className="text-xs font-bold text-white font-heading">Pooja Patel, Licensed Physiotherapist</h5>
                               <p className="text-[10px] text-[#22C55E] font-medium">Chief Sports Physiotherapist</p>
                             </div>
 

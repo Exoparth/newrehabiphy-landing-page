@@ -3,7 +3,7 @@ import { Physiotherapist, Testimonial, HowItWorksStep, Feature } from './types';
 export const EXPERT_PHYSIOS: Physiotherapist[] = [
   {
     id: 'p1',
-    name: 'Sarah Jenkins',
+    name: 'Pooja Patel',
     title: 'Chief Sports Physiotherapist',
     qualification: 'Qualified & Licensed Physiotherapist, OCS, CSCS',
     experience: '12+ Years Experience',
@@ -16,7 +16,7 @@ export const EXPERT_PHYSIOS: Physiotherapist[] = [
   },
   {
     id: 'p2',
-    name: 'Marcus Vance',
+    name: 'Amit Malhotra',
     title: 'Spine & Posture Rehabilitation Lead',
     qualification: 'Qualified & Licensed Physiotherapist, COMT',
     experience: '9+ Years Experience',
@@ -79,7 +79,7 @@ export const HOW_IT_WORKS_STEPS: HowItWorksStep[] = [
     iconName: 'Video',
     details: ['Hand-picked qualified & licensed physiotherapists', 'Flexible video & in-person visits', 'Direct 24/7 physio messaging'],
     mockupData: {
-      title: 'Sarah Jenkins, Licensed Physio',
+      title: 'Pooja Patel, Licensed Physio',
       status: 'Live Video Session',
       value: '1-on-1 Guided Care',
       badge: 'Step 3'
@@ -187,15 +187,15 @@ export const KEY_FEATURES_DATA: Feature[] = [
 export const TESTIMONIALS_DATA: Testimonial[] = [
   {
     id: 't1',
-    author: 'Michael Chang',
+    author: 'Rohan Sharma',
     role: 'Marathon Runner & Tech Lead',
     age: 32,
     condition: 'Post-Op ACL Reconstruction',
     recoveryTime: 'Recovered in 14 Weeks (vs 22 Wk Avg)',
-    quote: 'Rehabiphy changed my entire outlook on ACL recovery. The real-time camera posture feedback ensured I was doing my terminal knee extensions correctly, and Dr. Sarah adjusted my routine weekly.',
+    quote: 'Rehabiphy changed my entire outlook on ACL recovery. The real-time camera posture feedback ensured I was doing my terminal knee extensions correctly, and Dr. Pooja adjusted my routine weekly.',
     avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200',
     rating: 5,
-    physioName: 'Sarah Jenkins, Licensed Physiotherapist',
+    physioName: 'Pooja Patel, Licensed Physiotherapist',
     metrics: {
       label: 'Knee Extension ROM',
       before: '92° Flexion',
@@ -204,7 +204,7 @@ export const TESTIMONIALS_DATA: Testimonial[] = [
   },
   {
     id: 't2',
-    author: 'Elena Rostova',
+    author: 'Sneha Iyer',
     role: 'Architect & Mother of 2',
     age: 44,
     condition: 'Chronic Lumbar Sciatica',
@@ -212,7 +212,7 @@ export const TESTIMONIALS_DATA: Testimonial[] = [
     quote: 'I had debilitating lower back pain for 2 years that kept me off my feet. Home visits combined with the daily 10-minute AI habit tracker gave me my active life back without painkillers.',
     avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200',
     rating: 5,
-    physioName: 'Marcus Vance, Licensed Physiotherapist',
+    physioName: 'Amit Malhotra, Licensed Physiotherapist',
     metrics: {
       label: 'Daily Pain Index',
       before: '8/10 Severe',
@@ -221,7 +221,7 @@ export const TESTIMONIALS_DATA: Testimonial[] = [
   },
   {
     id: 't3',
-    author: 'David Sterling',
+    author: 'Kabir Mehta',
     role: 'CrossFit Athlete',
     age: 29,
     condition: 'Rotator Cuff Impingement',
