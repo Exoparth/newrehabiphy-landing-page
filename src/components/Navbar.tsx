@@ -23,6 +23,35 @@ export const Navbar: React.FC<NavbarProps> = ({
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleNavLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith('#/')) {
+      setMobileMenuOpen(false);
+      return;
+    }
+
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      setMobileMenuOpen(false);
+
+      const isSubpage = window.location.hash === '#/privacy' || 
+                        window.location.hash === '#/terms' || 
+                        window.location.hash === '#/contact';
+
+      if (isSubpage) {
+        window.location.hash = href;
+      } else {
+        const targetId = href.substring(1);
+        const element = document.getElementById(targetId);
+        if (element) {
+          setTimeout(() => {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            window.history.pushState(null, '', href);
+          }, 280);
+        }
+      }
+    }
+  };
+
   const navLinks = [
     { name: 'Features', href: '#features' },
     { name: 'Why Rehabiphy', href: '#why-rehabiphy' },
@@ -141,7 +170,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 <a
                   key={link.name}
                   href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={(e) => handleNavLinkClick(e, link.href)}
                   className="px-3 py-2.5 text-sm font-semibold text-slate-700 hover:text-[#0F766E] hover:bg-[#F8FFFC] rounded-lg transition-colors"
                 >
                   {link.name}
