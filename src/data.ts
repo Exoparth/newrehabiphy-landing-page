@@ -187,13 +187,13 @@ export const KEY_FEATURES_DATA: Feature[] = [
 export const TESTIMONIALS_DATA: Testimonial[] = [
   {
     id: 't1',
-    author: 'Rohan Sharma',
+    author: 'Riya Sharma',
     role: 'Marathon Runner & Tech Lead',
     age: 32,
     condition: 'Post-Op ACL Reconstruction',
     recoveryTime: 'Recovered in 14 Weeks (vs 22 Wk Avg)',
     quote: 'Rehabiphy changed my entire outlook on ACL recovery. The real-time camera posture feedback ensured I was doing my terminal knee extensions correctly, and Dr. Pooja adjusted my routine weekly.',
-    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200',
+    avatar: 'https://plus.unsplash.com/premium_photo-1723568666044-1b066e26b1fb?auto=format&fit=crop&q=80&w=200',
     rating: 5,
     physioName: 'Pooja Patel, Licensed Physiotherapist',
     metrics: {
@@ -210,7 +210,7 @@ export const TESTIMONIALS_DATA: Testimonial[] = [
     condition: 'Chronic Lumbar Sciatica',
     recoveryTime: 'Pain Free in 6 Weeks',
     quote: 'I had debilitating lower back pain for 2 years that kept me off my feet. Home visits combined with the daily 10-minute AI habit tracker gave me my active life back without painkillers.',
-    avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200',
+    avatar: 'https://images.unsplash.com/photo-1756376755233-d3abcd9a5edb?auto=format&fit=crop&q=80&w=200',
     rating: 5,
     physioName: 'Amit Malhotra, Licensed Physiotherapist',
     metrics: {
@@ -227,7 +227,7 @@ export const TESTIMONIALS_DATA: Testimonial[] = [
     condition: 'Rotator Cuff Impingement',
     recoveryTime: 'Full Mobility in 5 Weeks',
     quote: 'The AI camera feature measuring my shoulder abduction angle blew me away. I could see exact degree improvements every single morning. Best physiotherapy app hands down!',
-    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200',
+    avatar: 'https://cdn.pixabay.com/photo/2022/03/11/06/14/indian-man-7061278_1280.jpg?auto=format&fit=crop&q=80&w=200',
     rating: 5,
     physioName: 'Priya Sharma, Licensed Physiotherapist',
     metrics: {

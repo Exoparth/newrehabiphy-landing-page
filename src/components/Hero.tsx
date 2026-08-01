@@ -66,7 +66,7 @@ export const Hero: React.FC<HeroProps> = ({
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.1] font-heading">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-slate-900 tracking-tight leading-[1.1] font-heading">
               From setback to <br className="hidden sm:inline" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0F766E] via-[#115E59] to-[#22C55E]">
                 comeback.
@@ -443,7 +443,7 @@ export const Hero: React.FC<HeroProps> = ({
                           <img
                             src="https://images.unsplash.com/photo-1594824813566-788426a8d6b1?auto=format&fit=crop&q=80&w=400"
                             alt="Pooja Patel"
-                            referrerPolicy="no-referrer"
+                            referrerPolicy="strict-origin-when-cross-origin"
                             className="w-full h-44 object-cover object-top"
                           />
                           <div className="absolute top-2 left-2 bg-red-500/90 text-white text-[9px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1">

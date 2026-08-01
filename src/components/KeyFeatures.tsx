@@ -93,7 +93,7 @@ export const KeyFeatures: React.FC = () => {
             </div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight font-heading">
-              Complete clinical <span className="font-serif-italic text-[#0F766E]">ecosystem.</span>
+              Complete clinical <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0F766E] to-[#22C55E]">ecosystem.</span>
             </h2>
           </div>
 

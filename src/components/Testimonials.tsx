@@ -115,7 +115,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onOpenDownloadModal 
                   <img
                     src={t.avatar}
                     alt={t.author}
-                    referrerPolicy="no-referrer"
+                    referrerPolicy="strict-origin-when-cross-origin"
                     className="w-10 h-10 rounded-full object-cover border-2 border-[#0F766E]/20"
                   />
                   <div>
