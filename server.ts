@@ -256,6 +256,33 @@ app.post("/api/book-consultation", (req, res) => {
   });
 });
 
+// Deep Linking / Well-Known files routing
+app.get("/.well-known/apple-app-site-association", (_req, res) => {
+  res.setHeader("Content-Type", "application/json");
+  const prodPath = path.join(process.cwd(), "dist/.well-known/apple-app-site-association");
+  const devPath = path.join(process.cwd(), "public/.well-known/apple-app-site-association");
+  res.sendFile(prodPath, (err) => {
+    if (err) {
+      res.sendFile(devPath, (err2) => {
+        if (err2) res.status(404).send("Not Found");
+      });
+    }
+  });
+});
+
+app.get("/.well-known/assetlinks.json", (_req, res) => {
+  res.setHeader("Content-Type", "application/json");
+  const prodPath = path.join(process.cwd(), "dist/.well-known/assetlinks.json");
+  const devPath = path.join(process.cwd(), "public/.well-known/assetlinks.json");
+  res.sendFile(prodPath, (err) => {
+    if (err) {
+      res.sendFile(devPath, (err2) => {
+        if (err2) res.status(404).send("Not Found");
+      });
+    }
+  });
+});
+
 async function startServer() {
   if (process.env.NODE_ENV !== "production") {
     const vite = await createViteServer({

@@ -1,0 +1,15 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.rehabiphy",
+      "sha256_cert_fingerprints": [
+        "40:E4:2F:C4:30:B6:D7:50:D5:FA:ED:AD:D8:E4:AB:21:18:12:A8:03:41:42:4F:BD:B4:79:1E:74:11:7A:36:9D",
+        "0C:3B:56:90:6C:16:26:4C:A6:93:8E:EC:0C:91:FD:CA:60:CC:2A:06:65:AB:59:A2:FC:0E:B9:30:39:1B:FE:1E"
+      ]
+    }
+  }
+]
