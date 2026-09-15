@@ -64,8 +64,9 @@ export const DownloadAppModal: React.FC<DownloadAppModalProps> = ({ isOpen, onCl
               </a>
 
               <a
-                href="#"
-                onClick={(e) => { e.preventDefault(); alert("Rehabiphy App link generated!"); }}
+                href="https://play.google.com/store/apps/details?id=com.rehabiphy"
+                target="_blank"
+                rel="noreferrer"
                 className="p-3.5 bg-slate-950 hover:bg-slate-900 text-white rounded-2xl flex items-center justify-center text-center transition-transform hover:scale-102"
               >
                 <div>
