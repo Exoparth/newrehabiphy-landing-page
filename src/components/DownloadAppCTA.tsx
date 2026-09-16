@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Smartphone, Download, QrCode, Star, Sparkles, ShieldCheck } from 'lucide-react';
 import { RehabiphyQrCode } from './RehabiphyQrCode';
+import { PlayStoreIcon } from './PlayStoreIcon';
 
 interface DownloadAppCTAProps {
   onOpenDownloadModal: () => void;
@@ -34,22 +35,13 @@ export const DownloadAppCTA: React.FC<DownloadAppCTAProps> = ({ onOpenDownloadMo
               Get the 3D AI camera movement analyzer, book 1-on-1 virtual sessions with senior physiotherapists, and track daily habit recovery streaks.
             </p>
 
-            {/* App Store Buttons */}
+            {/* Play Store Button */}
             <div className="flex flex-wrap items-center gap-4 pt-2">
               <button
                 onClick={onOpenDownloadModal}
                 className="flex items-center gap-3 px-6 py-3.5 bg-slate-950 hover:bg-slate-900 rounded-2xl border border-slate-800 shadow-xl transition-transform hover:scale-105"
               >
-                <div className="text-left">
-                  <span className="text-[10px] text-slate-400 block uppercase font-medium">Download on the</span>
-                  <span className="text-base font-bold font-heading text-white">Apple App Store</span>
-                </div>
-              </button>
-
-              <button
-                onClick={onOpenDownloadModal}
-                className="flex items-center gap-3 px-6 py-3.5 bg-slate-950 hover:bg-slate-900 rounded-2xl border border-slate-800 shadow-xl transition-transform hover:scale-105"
-              >
+                <PlayStoreIcon className="w-7 h-7 shrink-0" />
                 <div className="text-left">
                   <span className="text-[10px] text-slate-400 block uppercase font-medium">GET IT ON</span>
                   <span className="text-base font-bold font-heading text-white">Google Play Store</span>
@@ -86,7 +78,7 @@ export const DownloadAppCTA: React.FC<DownloadAppCTAProps> = ({ onOpenDownloadMo
 
               <div className="pt-2 text-xs text-slate-400 flex items-center justify-center gap-1.5">
                 <ShieldCheck className="w-4 h-4 text-[#22C55E]" />
-                <span>Compatible with iOS 16+ and Android 10+</span>
+                <span>Compatible with Android 10+</span>
               </div>
             </div>
           </div>

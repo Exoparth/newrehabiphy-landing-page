@@ -268,7 +268,7 @@ export const KeyFeatures: React.FC = () => {
 
                 <div className="p-3 bg-slate-900 rounded-xl flex items-center justify-between text-xs">
                   <span className="text-slate-300">Available on Mobile App</span>
-                  <span className="font-bold text-[#22C55E]">iOS & Android</span>
+                  <span className="font-bold text-[#22C55E]">Android</span>
                 </div>
               </div>
             )}

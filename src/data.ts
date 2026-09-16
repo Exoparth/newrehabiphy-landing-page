@@ -47,13 +47,13 @@ export const HOW_IT_WORKS_STEPS: HowItWorksStep[] = [
     step: 1,
     title: 'Download App',
     subtitle: 'Instant Mobile Onboarding',
-    description: 'Get the Rehabiphy iOS or Android app in under 30 seconds. No complex paperwork or waiting room queues.',
+    description: 'Get the Rehabiphy Android app in under 30 seconds. No complex paperwork or waiting room queues.',
     iconName: 'Smartphone',
-    details: ['Available on iOS & Android', 'Instant secure account setup', 'Sync with Apple Health / Google Fit'],
+    details: ['Available on Android', 'Instant secure account setup', 'Sync with Google Fit'],
     mockupData: {
       title: 'Rehabiphy Setup',
       status: 'Ready in 30s',
-      value: 'App Store 4.9★',
+      value: 'Google Play 4.9★',
       badge: 'Step 1'
     }
   },

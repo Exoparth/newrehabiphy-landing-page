@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { X, Smartphone, Send, CheckCircle2, Star, ShieldCheck, Sparkles } from 'lucide-react';
+import { X, Smartphone, Star, ShieldCheck, Sparkles } from 'lucide-react';
 import { RehabiphyLogo } from './RehabiphyLogo';
 import { RehabiphyQrCode } from './RehabiphyQrCode';
+import { PlayStoreIcon } from './PlayStoreIcon';
 
 interface DownloadAppModalProps {
   isOpen: boolean;
@@ -10,19 +11,6 @@ interface DownloadAppModalProps {
 }
 
 export const DownloadAppModal: React.FC<DownloadAppModalProps> = ({ isOpen, onClose }) => {
-  const [phoneNumber, setPhoneNumber] = useState('');
-  const [sentStatus, setSentStatus] = useState(false);
-
-  const handleSendSms = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!phoneNumber) return;
-    setSentStatus(true);
-    setTimeout(() => {
-      setSentStatus(false);
-      setPhoneNumber('');
-    }, 4000);
-  };
-
   if (!isOpen) return null;
 
   return (
@@ -51,31 +39,19 @@ export const DownloadAppModal: React.FC<DownloadAppModalProps> = ({ isOpen, onCl
           </div>
 
           <div className="space-y-5">
-            {/* Store Buttons */}
-            <div className="grid grid-cols-2 gap-3">
-              <a
-                href="#"
-                onClick={(e) => { e.preventDefault(); alert("Rehabiphy App link generated!"); }}
-                className="p-3.5 bg-slate-950 hover:bg-slate-900 text-white rounded-2xl flex items-center justify-center text-center transition-transform hover:scale-102"
-              >
-                <div>
-                  <span className="text-[9px] text-slate-400 uppercase font-medium block">Download on</span>
-                  <span className="text-xs font-bold font-heading">App Store</span>
-                </div>
-              </a>
-
-              <a
-                href="https://play.google.com/store/apps/details?id=com.rehabiphy"
-                target="_blank"
-                rel="noreferrer"
-                className="p-3.5 bg-slate-950 hover:bg-slate-900 text-white rounded-2xl flex items-center justify-center text-center transition-transform hover:scale-102"
-              >
-                <div>
-                  <span className="text-[9px] text-slate-400 uppercase font-medium block">Get it on</span>
-                  <span className="text-xs font-bold font-heading">Google Play</span>
-                </div>
-              </a>
-            </div>
+            {/* Store Button */}
+            <a
+              href="https://play.google.com/store/apps/details?id=com.rehabiphy"
+              target="_blank"
+              rel="noreferrer"
+              className="w-fit mx-auto px-6 py-3.5 bg-slate-950 hover:bg-slate-900 text-white rounded-2xl flex items-center justify-center gap-2.5 transition-transform hover:scale-102"
+            >
+              <PlayStoreIcon className="w-6 h-6 shrink-0" />
+              <div className="text-left">
+                <span className="text-[9px] text-slate-400 uppercase font-medium block leading-tight">Get it on</span>
+                <span className="text-xs font-bold font-heading leading-tight">Google Play</span>
+              </div>
+            </a>
 
             {/* QR Code Container */}
             <div className="bg-[#F8FFFC] p-4 rounded-2xl border border-[#0F766E]/15 text-center space-y-3">
@@ -85,31 +61,6 @@ export const DownloadAppModal: React.FC<DownloadAppModalProps> = ({ isOpen, onCl
                 <RehabiphyQrCode size={112} />
               </div>
             </div>
-
-            {/* Instant SMS Form */}
-            <form onSubmit={handleSendSms} className="space-y-2">
-              <label className="text-xs font-bold text-slate-700 block">Get instant SMS link:</label>
-              <div className="flex gap-2">
-                <input
-                  type="tel"
-                  placeholder="+1 (555) 000-0000"
-                  value={phoneNumber}
-                  onChange={(e) => setPhoneNumber(e.target.value)}
-                  className="flex-1 bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 text-xs text-slate-900 outline-none focus:border-[#0F766E]"
-                />
-                <button
-                  type="submit"
-                  className="px-4 py-2.5 bg-[#0F766E] hover:bg-[#115E59] text-white text-xs font-bold rounded-xl transition-colors shrink-0"
-                >
-                  Send
-                </button>
-              </div>
-              {sentStatus && (
-                <p className="text-[11px] text-[#22C55E] font-bold flex items-center gap-1">
-                  <CheckCircle2 className="w-3.5 h-3.5" /> Link sent to your phone!
-                </p>
-              )}
-            </form>
 
             <div className="pt-2 text-center">
               <button
