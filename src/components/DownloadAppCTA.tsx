@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Smartphone, Download, QrCode, Star, Sparkles, ShieldCheck } from 'lucide-react';
+import { RehabiphyQrCode } from './RehabiphyQrCode';
 
 interface DownloadAppCTAProps {
   onOpenDownloadModal: () => void;
@@ -80,36 +81,7 @@ export const DownloadAppCTA: React.FC<DownloadAppCTAProps> = ({ onOpenDownloadMo
 
               {/* QR Code Graphic Box */}
               <div className="p-4 bg-white rounded-2xl border-4 border-[#22C55E] mx-auto inline-block shadow-lg">
-                <svg className="w-36 h-36" viewBox="0 0 100 100" fill="currentColor">
-                  {/* Styled QR Code Matrix */}
-                  <rect width="100" height="100" fill="white" />
-                  {/* Position detection markers */}
-                  <rect x="5" y="5" width="25" height="25" fill="#0F766E" />
-                  <rect x="9" y="9" width="17" height="17" fill="white" />
-                  <rect x="13" y="13" width="9" height="9" fill="#0F766E" />
-
-                  <rect x="70" y="5" width="25" height="25" fill="#0F766E" />
-                  <rect x="74" y="9" width="17" height="17" fill="white" />
-                  <rect x="78" y="13" width="9" height="9" fill="#0F766E" />
-
-                  <rect x="5" y="70" width="25" height="25" fill="#0F766E" />
-                  <rect x="9" y="74" width="17" height="17" fill="white" />
-                  <rect x="13" y="78" width="9" height="9" fill="#0F766E" />
-
-                  {/* QR Data Pattern */}
-                  <rect x="35" y="10" width="8" height="8" fill="#22C55E" />
-                  <rect x="45" y="15" width="8" height="8" fill="#0F766E" />
-                  <rect x="55" y="10" width="8" height="8" fill="#22C55E" />
-                  <rect x="35" y="35" width="10" height="10" fill="#0F766E" />
-                  <rect x="50" y="35" width="15" height="10" fill="#22C55E" />
-                  <rect x="70" y="35" width="10" height="10" fill="#0F766E" />
-                  <rect x="35" y="55" width="12" height="12" fill="#22C55E" />
-                  <rect x="55" y="55" width="12" height="12" fill="#0F766E" />
-                  <rect x="70" y="55" width="10" height="10" fill="#22C55E" />
-                  <rect x="35" y="75" width="15" height="10" fill="#0F766E" />
-                  <rect x="55" y="75" width="15" height="10" fill="#22C55E" />
-                  <rect x="75" y="75" width="10" height="10" fill="#0F766E" />
-                </svg>
+                <RehabiphyQrCode size={144} />
               </div>
 
               <div className="pt-2 text-xs text-slate-400 flex items-center justify-center gap-1.5">

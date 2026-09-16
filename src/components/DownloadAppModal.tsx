@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { X, Smartphone, QrCode, Send, CheckCircle2, Star, ShieldCheck, Sparkles } from 'lucide-react';
+import { X, Smartphone, Send, CheckCircle2, Star, ShieldCheck, Sparkles } from 'lucide-react';
 import { RehabiphyLogo } from './RehabiphyLogo';
+import { RehabiphyQrCode } from './RehabiphyQrCode';
 
 interface DownloadAppModalProps {
   isOpen: boolean;
@@ -81,26 +82,7 @@ export const DownloadAppModal: React.FC<DownloadAppModalProps> = ({ isOpen, onCl
               <p className="text-xs font-bold text-slate-800">Scan QR Code with your camera:</p>
               
               <div className="p-3 bg-white rounded-xl border-2 border-[#22C55E] inline-block shadow-sm">
-                <svg className="w-28 h-28" viewBox="0 0 100 100" fill="currentColor">
-                  <rect width="100" height="100" fill="white" />
-                  <rect x="5" y="5" width="25" height="25" fill="#0F766E" />
-                  <rect x="9" y="9" width="17" height="17" fill="white" />
-                  <rect x="13" y="13" width="9" height="9" fill="#0F766E" />
-                  <rect x="70" y="5" width="25" height="25" fill="#0F766E" />
-                  <rect x="74" y="9" width="17" height="17" fill="white" />
-                  <rect x="78" y="13" width="9" height="9" fill="#0F766E" />
-                  <rect x="5" y="70" width="25" height="25" fill="#0F766E" />
-                  <rect x="9" y="74" width="17" height="17" fill="white" />
-                  <rect x="13" y="78" width="9" height="9" fill="#0F766E" />
-                  <rect x="35" y="10" width="8" height="8" fill="#22C55E" />
-                  <rect x="45" y="15" width="8" height="8" fill="#0F766E" />
-                  <rect x="55" y="10" width="8" height="8" fill="#22C55E" />
-                  <rect x="35" y="35" width="10" height="10" fill="#0F766E" />
-                  <rect x="50" y="35" width="15" height="10" fill="#22C55E" />
-                  <rect x="70" y="35" width="10" height="10" fill="#0F766E" />
-                  <rect x="35" y="55" width="12" height="12" fill="#22C55E" />
-                  <rect x="55" y="55" width="12" height="12" fill="#0F766E" />
-                </svg>
+                <RehabiphyQrCode size={112} />
               </div>
             </div>
 
