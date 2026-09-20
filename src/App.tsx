@@ -13,10 +13,11 @@ import { DownloadAppModal } from './components/DownloadAppModal';
 import { PrivacyPolicy } from './components/PrivacyPolicy';
 import { TermsConditions } from './components/TermsConditions';
 import { ContactUs } from './components/ContactUs';
+import { VerifyRedirect } from './components/VerifyRedirect';
 import { BlogListPage } from './components/blog/BlogListPage';
 import { BlogPostPage } from './components/blog/BlogPostPage';
 
-type Page = 'home' | 'privacy' | 'terms' | 'contact' | 'blogs' | 'blog';
+type Page = 'home' | 'privacy' | 'terms' | 'contact' | 'verify' | 'blogs' | 'blog';
 
 interface Route {
   page: Page;
@@ -25,6 +26,11 @@ interface Route {
 
 function getRoute(): Route {
   const path = window.location.pathname.replace(/\/+$/, '') || '/';
+
+  // /verify is a real path (not a #hash route like the others below) —
+  // it has to be, since Android/iOS App Links match against the actual
+  // URL path, not the fragment, in order to intercept it into the app.
+  if (path === '/verify') return { page: 'verify' };
 
   // Blog pages are real paths too, so every article has its own shareable,
   // indexable URL (see the /blogs rewrites in vercel.json).
@@ -109,6 +115,10 @@ export default function App() {
     document.addEventListener('click', onClick, true);
     return () => document.removeEventListener('click', onClick, true);
   }, [goTo]);
+
+  if (currentPage === 'verify') {
+    return <VerifyRedirect />;
+  }
 
   if (currentPage === 'privacy') {
     return <PrivacyPolicy onBack={() => navigate('home')} />;

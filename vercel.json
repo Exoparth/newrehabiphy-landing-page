@@ -1,5 +1,8 @@
 {
   "rewrites": [
+    { "source": "/verify", "destination": "/index.html" },
+    { "source": "/ref", "destination": "/index.html" },
+    { "source": "/share", "destination": "/index.html" },
     { "source": "/blogs", "destination": "/index.html" },
     { "source": "/blogs/:slug", "destination": "/index.html" }
   ]
