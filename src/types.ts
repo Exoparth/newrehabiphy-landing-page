@@ -78,3 +78,27 @@ export interface AiAssessmentResult {
   }[];
   precaution: string;
 }
+
+// ── Blog (public API: GET /v1/blogs, GET /v1/blogs/:slug) ──────────────────
+export interface BlogSummary {
+  id: string;
+  title: string;
+  slug: string;
+  excerpt: string | null;
+  coverImage: string | null;
+  readingMinutes: number;
+  publishedAt: string;
+}
+
+export interface BlogDetail extends BlogSummary {
+  content: string; // sanitized HTML
+  updatedAt: string;
+}
+
+export interface BlogListResponse {
+  blogs: BlogSummary[];
+  page: number;
+  limit: number;
+  total: number;
+  totalPages: number;
+}

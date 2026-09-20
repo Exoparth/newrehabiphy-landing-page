@@ -53,6 +53,9 @@ export const Footer: React.FC<FooterProps> = ({
                 <a href="#how-it-works" className="hover:text-[#22C55E] transition-colors">How It Works</a>
               </li>
               <li>
+                <a href="/blogs" className="hover:text-[#22C55E] transition-colors">Blog</a>
+              </li>
+              <li>
                 <button onClick={onOpenAiModal} className="hover:text-[#22C55E] transition-colors text-left">
                   AI Symptom Assistant
                 </button>

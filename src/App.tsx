@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { WhyRehabiphy } from './components/WhyRehabiphy';
@@ -13,35 +13,102 @@ import { DownloadAppModal } from './components/DownloadAppModal';
 import { PrivacyPolicy } from './components/PrivacyPolicy';
 import { TermsConditions } from './components/TermsConditions';
 import { ContactUs } from './components/ContactUs';
+import { BlogListPage } from './components/blog/BlogListPage';
+import { BlogPostPage } from './components/blog/BlogPostPage';
 
-type Page = 'home' | 'privacy' | 'terms' | 'contact';
+type Page = 'home' | 'privacy' | 'terms' | 'contact' | 'blogs' | 'blog';
 
-function getInitialPage(): Page {
+interface Route {
+  page: Page;
+  slug?: string; // set for page === 'blog'
+}
+
+function getRoute(): Route {
+  const path = window.location.pathname.replace(/\/+$/, '') || '/';
+
+  // Blog pages are real paths too, so every article has its own shareable,
+  // indexable URL (see the /blogs rewrites in vercel.json).
+  if (path === '/blogs') return { page: 'blogs' };
+  const blogMatch = path.match(/^\/blogs\/([^/]+)$/);
+  if (blogMatch) return { page: 'blog', slug: decodeURIComponent(blogMatch[1]) };
+
   const hash = window.location.hash;
-  if (hash === '#/privacy') return 'privacy';
-  if (hash === '#/terms') return 'terms';
-  if (hash === '#/contact') return 'contact';
-  return 'home';
+  if (hash === '#/privacy') return { page: 'privacy' };
+  if (hash === '#/terms') return { page: 'terms' };
+  if (hash === '#/contact') return { page: 'contact' };
+  return { page: 'home' };
 }
 
 export default function App() {
   const [aiModalOpen, setAiModalOpen] = useState(false);
   const [downloadModalOpen, setDownloadModalOpen] = useState(false);
-  const [currentPage, setCurrentPage] = useState<Page>(getInitialPage);
+  const [route, setRoute] = useState<Route>(getRoute);
+  const currentPage = route.page;
 
-  const navigate = (page: Page) => {
-    setCurrentPage(page);
-    window.location.hash = page === 'home' ? '' : `/${page}`;
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  // Client-side navigation to any in-app URL ('/', '/blogs/x', '/#/privacy', '/#features').
+  const goTo = useCallback((url: string) => {
+    window.history.pushState(null, '', url);
+    setRoute(getRoute());
+
+    const anchor = url.split('#')[1];
+    if (anchor && !anchor.startsWith('/')) {
+      // Plain in-page anchor: wait for the target page to render, then scroll to it.
+      setTimeout(() => document.getElementById(anchor)?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 120);
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }, []);
+
+  const navigate = (page: 'home' | 'privacy' | 'terms' | 'contact') => {
+    goTo(page === 'home' ? '/' : `/#/${page}`);
   };
 
   useEffect(() => {
-    const handleHashChange = () => {
-      setCurrentPage(getInitialPage());
+    const handleLocationChange = () => setRoute(getRoute());
+    window.addEventListener('hashchange', handleLocationChange);
+    window.addEventListener('popstate', handleLocationChange);
+    return () => {
+      window.removeEventListener('hashchange', handleLocationChange);
+      window.removeEventListener('popstate', handleLocationChange);
     };
-    window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
+
+  // Link handling for the blog pages. Runs in the capture phase so it wins over
+  // the Navbar's own hash-link handler.
+  useEffect(() => {
+    const onClick = (e: MouseEvent) => {
+      if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      const anchor = (e.target as Element | null)?.closest?.('a[href]') as HTMLAnchorElement | null;
+      if (!anchor || (anchor.target && anchor.target !== '_self')) return;
+      const href = anchor.getAttribute('href') || '';
+
+      // Table-of-contents links inside an article: scroll within the article.
+      if (href.startsWith('#') && anchor.closest('.blog-content')) {
+        e.preventDefault();
+        e.stopPropagation();
+        document.getElementById(decodeURIComponent(href.slice(1)))?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        return;
+      }
+
+      // Links to blog pages: navigate without a full reload.
+      if (href === '/blogs' || href.startsWith('/blogs/')) {
+        e.preventDefault();
+        e.stopPropagation();
+        goTo(href);
+        return;
+      }
+
+      // Home-page anchors / hash pages (#features, #/contact…) clicked while on a blog page.
+      const onBlogPage = window.location.pathname.startsWith('/blogs');
+      if (onBlogPage && href.startsWith('#')) {
+        e.preventDefault();
+        e.stopPropagation();
+        goTo(`/${href === '#' ? '' : href}`);
+      }
+    };
+    document.addEventListener('click', onClick, true);
+    return () => document.removeEventListener('click', onClick, true);
+  }, [goTo]);
 
   if (currentPage === 'privacy') {
     return <PrivacyPolicy onBack={() => navigate('home')} />;
@@ -53,6 +120,40 @@ export default function App() {
 
   if (currentPage === 'contact') {
     return <ContactUs onBack={() => navigate('home')} />;
+  }
+
+  if (currentPage === 'blogs' || currentPage === 'blog') {
+    return (
+      <div className="min-h-screen bg-[#F8FFFC] text-slate-800 flex flex-col font-sans selection:bg-[#0F766E]/20 selection:text-[#0F766E]">
+        <Navbar
+          onOpenAiModal={() => setAiModalOpen(true)}
+          onOpenDownloadModal={() => setDownloadModalOpen(true)}
+        />
+
+        <main className="flex-1 pt-24 sm:pt-28">
+          {currentPage === 'blogs' ? (
+            <BlogListPage />
+          ) : (
+            <BlogPostPage
+              key={route.slug}
+              slug={route.slug!}
+              onOpenDownloadModal={() => setDownloadModalOpen(true)}
+            />
+          )}
+        </main>
+
+        <Footer
+          onOpenAiModal={() => setAiModalOpen(true)}
+          onOpenDownloadModal={() => setDownloadModalOpen(true)}
+          onOpenPrivacy={() => navigate('privacy')}
+          onOpenTerms={() => navigate('terms')}
+          onOpenContact={() => navigate('contact')}
+        />
+
+        <AiAssistantModal isOpen={aiModalOpen} onClose={() => setAiModalOpen(false)} />
+        <DownloadAppModal isOpen={downloadModalOpen} onClose={() => setDownloadModalOpen(false)} />
+      </div>
+    );
   }
 
   return (
