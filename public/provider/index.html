@@ -5,14 +5,23 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
     <title>Rehabiphy Provider</title>
     <meta name="description" content="Rehabiphy Provider: grow your physiotherapy or fitness practice with verified patient leads, bookings and earnings in one app." />
-    <meta name="theme-color" content="#0E7C86" />
-    <meta name="color-scheme" content="light dark" />
-    <link rel="icon" type="image/svg+xml" href="/provider/favicon.svg" />
+    <meta name="theme-color" content="#20A555" />
+    <script>
+      // apply the saved appearance before first paint (kept in sync with src/lib/theme.js)
+      (function () {
+        var pref = null;
+        try { pref = localStorage.getItem('rp_theme'); } catch (e) {}
+        var dark = pref === 'dark' || (pref !== 'light' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+      })();
+    </script>
+    <link rel="icon" type="image/png" href="/provider/favicon.png" />
+    <link rel="apple-touch-icon" href="/provider/favicon.png" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-title" content="Rehab Provider" />
-    <script type="module" crossorigin src="/provider/assets/index-D6z9DHiq.js"></script>
-    <link rel="stylesheet" crossorigin href="/provider/assets/index-BADqRxxb.css">
+    <script type="module" crossorigin src="/provider/assets/index-cMIk3BJB.js"></script>
+    <link rel="stylesheet" crossorigin href="/provider/assets/index-oEaAWR_V.css">
   </head>
   <body>
     <div id="root" aria-live="polite"></div>
