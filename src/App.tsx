@@ -3,9 +3,9 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { WhyRehabiphy } from './components/WhyRehabiphy';
 import { HowItWorks } from './components/HowItWorks';
+import { PostureAssessment } from './components/PostureAssessment';
 import { KeyFeatures } from './components/KeyFeatures';
 import { AudienceTab } from './components/AudienceTab';
-import { Testimonials } from './components/Testimonials';
 import { DownloadAppCTA } from './components/DownloadAppCTA';
 import { Footer } from './components/Footer';
 import { AiAssistantModal } from './components/AiAssistantModal';
@@ -13,11 +13,22 @@ import { DownloadAppModal } from './components/DownloadAppModal';
 import { PrivacyPolicy } from './components/PrivacyPolicy';
 import { TermsConditions } from './components/TermsConditions';
 import { ContactUs } from './components/ContactUs';
+import { AboutUs } from './components/AboutUs';
 import { VerifyRedirect } from './components/VerifyRedirect';
 import { BlogListPage } from './components/blog/BlogListPage';
 import { BlogPostPage } from './components/blog/BlogPostPage';
+import { isAdSenseLoaded } from './lib/useAdSense';
 
-type Page = 'home' | 'privacy' | 'terms' | 'contact' | 'verify' | 'blogs' | 'blog';
+type Page = 'home' | 'privacy' | 'terms' | 'contact' | 'about' | 'verify' | 'blogs' | 'blog';
+type StaticPage = 'privacy' | 'terms' | 'contact' | 'about';
+
+// Pages with their own real URL, so crawlers and visitors can link straight to them.
+const STATIC_PAGES: Record<string, StaticPage> = {
+  '/privacy': 'privacy',
+  '/terms': 'terms',
+  '/contact': 'contact',
+  '/about': 'about',
+};
 
 interface Route {
   page: Page;
@@ -38,12 +49,19 @@ function getRoute(): Route {
   const blogMatch = path.match(/^\/blogs\/([^/]+)$/);
   if (blogMatch) return { page: 'blog', slug: decodeURIComponent(blogMatch[1]) };
 
-  const hash = window.location.hash;
-  if (hash === '#/privacy') return { page: 'privacy' };
-  if (hash === '#/terms') return { page: 'terms' };
-  if (hash === '#/contact') return { page: 'contact' };
+  if (STATIC_PAGES[path]) return { page: STATIC_PAGES[path] };
+
+  // Old links used #/privacy, #/terms and #/contact — send them to the real URLs.
+  const legacy = window.location.hash.replace(/^#/, '');
+  if (STATIC_PAGES[legacy]) {
+    window.history.replaceState(null, '', legacy);
+    return { page: STATIC_PAGES[legacy] };
+  }
+
   return { page: 'home' };
 }
+
+const isBlogUrl = (url: string) => /^\/blogs(\/|$)/.test(url);
 
 export default function App() {
   const [aiModalOpen, setAiModalOpen] = useState(false);
@@ -51,8 +69,15 @@ export default function App() {
   const [route, setRoute] = useState<Route>(getRoute);
   const currentPage = route.page;
 
-  // Client-side navigation to any in-app URL ('/', '/blogs/x', '/#/privacy', '/#features').
+  // Client-side navigation to any in-app URL ('/', '/blogs/x', '/privacy', '/#features').
   const goTo = useCallback((url: string) => {
+    // Ads belong on article pages only: once the ad script is running, leave
+    // the blog with a full page load so it doesn't follow the visitor around.
+    if (isAdSenseLoaded() && !isBlogUrl(url)) {
+      window.location.assign(url);
+      return;
+    }
+
     window.history.pushState(null, '', url);
     setRoute(getRoute());
 
@@ -65,12 +90,16 @@ export default function App() {
     }
   }, []);
 
-  const navigate = (page: 'home' | 'privacy' | 'terms' | 'contact') => {
-    goTo(page === 'home' ? '/' : `/#/${page}`);
-  };
+  const goHome = () => goTo('/');
 
   useEffect(() => {
-    const handleLocationChange = () => setRoute(getRoute());
+    const handleLocationChange = () => {
+      if (isAdSenseLoaded() && !isBlogUrl(window.location.pathname)) {
+        window.location.reload();
+        return;
+      }
+      setRoute(getRoute());
+    };
     window.addEventListener('hashchange', handleLocationChange);
     window.addEventListener('popstate', handleLocationChange);
     return () => {
@@ -79,7 +108,7 @@ export default function App() {
     };
   }, []);
 
-  // Link handling for the blog pages. Runs in the capture phase so it wins over
+  // Link handling for in-app URLs. Runs in the capture phase so it wins over
   // the Navbar's own hash-link handler.
   useEffect(() => {
     const onClick = (e: MouseEvent) => {
@@ -96,17 +125,17 @@ export default function App() {
         return;
       }
 
-      // Links to blog pages: navigate without a full reload.
-      if (href === '/blogs' || href.startsWith('/blogs/')) {
+      // Links to in-app pages: navigate without a full reload.
+      if (href === '/' || isBlogUrl(href) || STATIC_PAGES[href]) {
         e.preventDefault();
         e.stopPropagation();
         goTo(href);
         return;
       }
 
-      // Home-page anchors / hash pages (#features, #/contact…) clicked while on a blog page.
-      const onBlogPage = window.location.pathname.startsWith('/blogs');
-      if (onBlogPage && href.startsWith('#')) {
+      // Home-page anchors (#features…) clicked while on any other page.
+      const offHome = window.location.pathname.replace(/\/+$/, '') !== '';
+      if (offHome && href.startsWith('#')) {
         e.preventDefault();
         e.stopPropagation();
         goTo(`/${href === '#' ? '' : href}`);
@@ -121,18 +150,18 @@ export default function App() {
   }
 
   if (currentPage === 'privacy') {
-    return <PrivacyPolicy onBack={() => navigate('home')} />;
+    return <PrivacyPolicy onBack={goHome} />;
   }
 
   if (currentPage === 'terms') {
-    return <TermsConditions onBack={() => navigate('home')} />;
+    return <TermsConditions onBack={goHome} />;
   }
 
   if (currentPage === 'contact') {
-    return <ContactUs onBack={() => navigate('home')} />;
+    return <ContactUs onBack={goHome} />;
   }
 
-  if (currentPage === 'blogs' || currentPage === 'blog') {
+  if (currentPage === 'blogs' || currentPage === 'blog' || currentPage === 'about') {
     return (
       <div className="min-h-screen bg-[#F8FFFC] text-slate-800 flex flex-col font-sans selection:bg-[#0F766E]/20 selection:text-[#0F766E]">
         <Navbar
@@ -141,7 +170,9 @@ export default function App() {
         />
 
         <main className="flex-1 pt-24 sm:pt-28">
-          {currentPage === 'blogs' ? (
+          {currentPage === 'about' ? (
+            <AboutUs onOpenDownloadModal={() => setDownloadModalOpen(true)} />
+          ) : currentPage === 'blogs' ? (
             <BlogListPage />
           ) : (
             <BlogPostPage
@@ -155,9 +186,6 @@ export default function App() {
         <Footer
           onOpenAiModal={() => setAiModalOpen(true)}
           onOpenDownloadModal={() => setDownloadModalOpen(true)}
-          onOpenPrivacy={() => navigate('privacy')}
-          onOpenTerms={() => navigate('terms')}
-          onOpenContact={() => navigate('contact')}
         />
 
         <AiAssistantModal isOpen={aiModalOpen} onClose={() => setAiModalOpen(false)} />
@@ -190,6 +218,11 @@ export default function App() {
           onOpenDownloadModal={() => setDownloadModalOpen(true)}
         />
 
+        {/* AI Posture Assessment (in-app screening tool) */}
+        <PostureAssessment
+          onOpenDownloadModal={() => setDownloadModalOpen(true)}
+        />
+
         {/* 5. Key Features Section */}
         <KeyFeatures />
 
@@ -198,24 +231,16 @@ export default function App() {
           onOpenDownloadModal={() => setDownloadModalOpen(true)}
         />
 
-        {/* 6. Testimonials Section */}
-        <Testimonials
-          onOpenDownloadModal={() => setDownloadModalOpen(true)}
-        />
-
-        {/* 7. Download App CTA Section */}
+        {/* 6. Download App CTA Section */}
         <DownloadAppCTA
           onOpenDownloadModal={() => setDownloadModalOpen(true)}
         />
       </main>
 
-      {/* 8. Footer Section */}
+      {/* 7. Footer Section */}
       <Footer
         onOpenAiModal={() => setAiModalOpen(true)}
         onOpenDownloadModal={() => setDownloadModalOpen(true)}
-        onOpenPrivacy={() => navigate('privacy')}
-        onOpenTerms={() => navigate('terms')}
-        onOpenContact={() => navigate('contact')}
       />
 
       {/* Interactive Modals */}

@@ -5,17 +5,11 @@ import { RehabiphyLogo } from './RehabiphyLogo';
 interface FooterProps {
   onOpenAiModal: () => void;
   onOpenDownloadModal: () => void;
-  onOpenPrivacy: () => void;
-  onOpenTerms: () => void;
-  onOpenContact: () => void;
 }
 
 export const Footer: React.FC<FooterProps> = ({
   onOpenAiModal,
   onOpenDownloadModal,
-  onOpenPrivacy,
-  onOpenTerms,
-  onOpenContact,
 }) => {
   return (
     <footer className="bg-slate-950 text-slate-300 pt-16 pb-12 border-t border-slate-800">
@@ -24,7 +18,7 @@ export const Footer: React.FC<FooterProps> = ({
           
           {/* Brand Column */}
           <div className="lg:col-span-2 space-y-4">
-            <a href="#" className="inline-block hover:opacity-90 transition-opacity">
+            <a href="/" className="inline-block hover:opacity-90 transition-opacity">
               <RehabiphyLogo variant="dark" showTagline={true} layout="horizontal" iconSize={40} />
             </a>
 
@@ -53,7 +47,13 @@ export const Footer: React.FC<FooterProps> = ({
                 <a href="#how-it-works" className="hover:text-[#22C55E] transition-colors">How It Works</a>
               </li>
               <li>
+                <a href="#posture-assessment" className="hover:text-[#22C55E] transition-colors">AI Posture Assessment</a>
+              </li>
+              <li>
                 <a href="/blogs" className="hover:text-[#22C55E] transition-colors">Blog</a>
+              </li>
+              <li>
+                <a href="/about" className="hover:text-[#22C55E] transition-colors">About Us</a>
               </li>
               <li>
                 <button onClick={onOpenAiModal} className="hover:text-[#22C55E] transition-colors text-left">
@@ -99,10 +99,10 @@ export const Footer: React.FC<FooterProps> = ({
                 <span>Lucknow, UP, India</span>
               </li>
               <li>
-                <button onClick={onOpenContact} className="flex items-center gap-2 text-slate-400 hover:text-[#22C55E] transition-colors">
+                <a href="/contact" className="flex items-center gap-2 text-slate-400 hover:text-[#22C55E] transition-colors">
                   <span className="w-3.5 h-3.5 text-[#22C55E] inline-flex items-center justify-center">→</span>
                   Contact Us
-                </button>
+                </a>
               </li>
             </ul>
           </div>
@@ -112,16 +112,20 @@ export const Footer: React.FC<FooterProps> = ({
         {/* Clinical Disclaimer & Copyright */}
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <p className="text-center md:text-left">
-            © {new Date().getFullYear()} Rehabiphy Inc. All rights reserved. 
+            © {new Date().getFullYear()} Rehabiphy Health Technologies Private Limited. All rights reserved. 
             <span className="block sm:inline text-[11px] mt-1 sm:mt-0 sm:ml-2 text-slate-600">
               Medical Disclaimer: Rehabiphy AI assists movement guidance and does not replace emergency medical advice.
             </span>
           </p>
 
           <div className="flex items-center gap-4 text-xs">
-            <button onClick={onOpenPrivacy} className="hover:text-slate-300 transition-colors">Privacy Policy</button>
+            <a href="/about" className="hover:text-slate-300 transition-colors">About</a>
             <span>•</span>
-            <button onClick={onOpenTerms} className="hover:text-slate-300 transition-colors">Terms of Service</button>
+            <a href="/contact" className="hover:text-slate-300 transition-colors">Contact</a>
+            <span>•</span>
+            <a href="/privacy" className="hover:text-slate-300 transition-colors">Privacy Policy</a>
+            <span>•</span>
+            <a href="/terms" className="hover:text-slate-300 transition-colors">Terms of Service</a>
           </div>
         </div>
 

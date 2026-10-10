@@ -49,11 +49,11 @@ export const HOW_IT_WORKS_STEPS: HowItWorksStep[] = [
     subtitle: 'Instant Mobile Onboarding',
     description: 'Get the Rehabiphy Android app in under 30 seconds. No complex paperwork or waiting room queues.',
     iconName: 'Smartphone',
-    details: ['Available on Android', 'Instant secure account setup', 'Sync with Google Fit'],
+    details: ['Available on Android', 'Instant secure account setup', 'Optional Health Connect sync'],
     mockupData: {
       title: 'Rehabiphy Setup',
       status: 'Ready in 30s',
-      value: 'Google Play 4.9★',
+      value: 'Free on Google Play',
       badge: 'Step 1'
     }
   },
@@ -63,7 +63,7 @@ export const HOW_IT_WORKS_STEPS: HowItWorksStep[] = [
     subtitle: '3D Joint Pose Computer Vision',
     description: 'Position your phone camera. Our AI clinical vision scans range-of-motion, joint angles, and postural balance in real time.',
     iconName: 'Scan',
-    details: ['Sub-degree angle precision', 'Zero wearable hardware needed', 'Instant movement risk analysis'],
+    details: ['Camera-based joint angle tracking', 'Zero wearable hardware needed', 'Instant movement feedback'],
     mockupData: {
       title: 'Real-time Camera Scan',
       status: 'Knee Extension: 138°',
@@ -91,11 +91,11 @@ export const HOW_IT_WORKS_STEPS: HowItWorksStep[] = [
     subtitle: 'Daily AI Habit & Progress Loops',
     description: 'Follow personalized daily micro-routines. AI checks your form during exercises while your physio adjusts your plan dynamically.',
     iconName: 'TrendingUp',
-    details: ['Interactive daily habit streaks', 'Dynamic pain score recalibration', '3x faster recovery milestones'],
+    details: ['Interactive daily habit streaks', 'Dynamic pain score recalibration', 'Clear recovery milestones'],
     mockupData: {
       title: 'Recovery Score',
-      status: '94% Mobility Regained',
-      value: '+28° ROM Progress',
+      status: 'Sample Progress View',
+      value: 'Range of Motion Trend',
       badge: 'Step 4'
     }
   }
@@ -114,8 +114,8 @@ export const KEY_FEATURES_DATA: Feature[] = [
       'Digital prescription & e-medical history sync'
     ],
     metrics: [
-      { label: 'Patient Rating', value: '4.95/5' },
-      { label: 'Wait Time', value: '< 15 Mins' }
+      { label: 'Format', value: 'HD Video' },
+      { label: 'Sessions', value: '1-on-1' }
     ]
   },
   {
@@ -130,8 +130,8 @@ export const KEY_FEATURES_DATA: Feature[] = [
       'Flexible booking including weekends & evenings'
     ],
     metrics: [
-      { label: 'Cities Covered', value: '40+' },
-      { label: 'On-Time Rate', value: '98.8%' }
+      { label: 'Care', value: 'At Home' },
+      { label: 'Booking', value: 'Flexible' }
     ]
   },
   {
@@ -146,8 +146,8 @@ export const KEY_FEATURES_DATA: Feature[] = [
       'Bite-sized 10-15 minute daily rehab routines'
     ],
     metrics: [
-      { label: 'Plan Accuracy', value: '96%' },
-      { label: 'Completion Rate', value: '88%' }
+      { label: 'Plan Updates', value: 'Weekly' },
+      { label: 'Daily Routine', value: '10-15 Mins' }
     ]
   },
   {
@@ -157,13 +157,13 @@ export const KEY_FEATURES_DATA: Feature[] = [
     badge: 'Quantitative Healing',
     icon: 'Activity',
     bullets: [
-      'Sub-degree Range of Motion (ROM) charts',
+      'Range of Motion (ROM) charts',
       'Visual pain trajectory index over 30/60 days',
       'Exportable PDF recovery reports for orthopedic surgeons'
     ],
     metrics: [
-      { label: 'Average Speedup', value: '2.8x' },
-      { label: 'Data Points', value: '10M+' }
+      { label: 'Charts', value: 'ROM & Pain' },
+      { label: 'Reports', value: 'PDF Export' }
     ]
   },
   {
@@ -173,13 +173,13 @@ export const KEY_FEATURES_DATA: Feature[] = [
     badge: '24/7 AI Guidance',
     icon: 'Bot',
     bullets: [
-      'Instant clinical answer retrieval for symptoms',
+      'Quick general guidance on common recovery questions',
       'Automated safety triage & emergency referral flags',
       'Voice-assisted exercise repetition counting'
     ],
     metrics: [
-      { label: 'Response Time', value: '< 2 Sec' },
-      { label: '24/7 Access', value: '100%' }
+      { label: 'Availability', value: '24/7' },
+      { label: 'Guidance', value: 'Informational' }
     ]
   }
 ];

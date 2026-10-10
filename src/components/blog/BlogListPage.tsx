@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { ArrowRight, Clock, Loader2 } from 'lucide-react';
 import { blogService } from '../../lib/blogService';
+import { readPrerendered } from '../../lib/prerendered';
 import { useDocumentMeta } from '../../lib/useDocumentMeta';
 import type { BlogSummary } from '../../types';
 import { RehabiphyIcon } from '../RehabiphyLogo';
@@ -47,10 +48,12 @@ const BlogCard: React.FC<{ blog: BlogSummary }> = ({ blog }) => (
 );
 
 export const BlogListPage: React.FC = () => {
-  const [blogs, setBlogs] = useState<BlogSummary[]>([]);
-  const [page, setPage] = useState(0);
-  const [totalPages, setTotalPages] = useState(1);
-  const [loading, setLoading] = useState(true);
+  // First page comes embedded in the HTML on a direct visit (see api/blog.js).
+  const [initial] = useState(() => readPrerendered('blogList'));
+  const [blogs, setBlogs] = useState<BlogSummary[]>(initial?.blogs ?? []);
+  const [page, setPage] = useState(initial?.page ?? 0);
+  const [totalPages, setTotalPages] = useState(initial?.totalPages ?? 1);
+  const [loading, setLoading] = useState(!initial);
   const [error, setError] = useState('');
 
   useDocumentMeta({
@@ -76,10 +79,11 @@ export const BlogListPage: React.FC = () => {
   }, []);
 
   useEffect(() => {
+    if (initial) return;
     const controller = new AbortController();
     loadPage(1, controller.signal);
     return () => controller.abort();
-  }, [loadPage]);
+  }, [loadPage, initial]);
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">

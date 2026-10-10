@@ -21,6 +21,7 @@ import {
   Ban,
 } from 'lucide-react';
 import { RehabiphyLogo } from './RehabiphyLogo';
+import { useDocumentMeta } from '../lib/useDocumentMeta';
 
 interface TermsConditionsProps {
   onBack: () => void;
@@ -69,6 +70,12 @@ const sections: Section[] = [
 export const TermsConditions: React.FC<TermsConditionsProps> = ({ onBack }) => {
   const [activeSection, setActiveSection] = useState('about');
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
+
+  useDocumentMeta({
+    title: 'Terms & Conditions | Rehabiphy',
+    description:
+      'The terms that govern your use of the Rehabiphy app, website and physiotherapy services, including payments, AI features and the healthcare disclaimer.',
+  });
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });

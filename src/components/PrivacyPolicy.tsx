@@ -14,6 +14,7 @@ import {
   ArrowLeft,
 } from 'lucide-react';
 import { RehabiphyLogo } from './RehabiphyLogo';
+import { useDocumentMeta } from '../lib/useDocumentMeta';
 
 interface PrivacyPolicyProps {
   onBack: () => void;
@@ -40,18 +41,25 @@ const sections: Section[] = [
   { id: 'rights', number: '11', title: 'Your Rights', icon: <Eye className="w-4 h-4" /> },
   { id: 'children', number: '12', title: "Children's Privacy", icon: <ShieldCheck className="w-4 h-4" /> },
   { id: 'cookies', number: '13', title: 'Cookies & Technologies', icon: <Globe className="w-4 h-4" /> },
-  { id: 'third-party', number: '14', title: 'Third-Party Services', icon: <Globe className="w-4 h-4" /> },
-  { id: 'transfers', number: '15', title: 'International Data Transfers', icon: <Globe className="w-4 h-4" /> },
-  { id: 'deletion', number: '16', title: 'Account Deletion', icon: <Trash2 className="w-4 h-4" /> },
-  { id: 'notifications', number: '17', title: 'Notifications', icon: <Bell className="w-4 h-4" /> },
-  { id: 'changes', number: '18', title: 'Changes to This Policy', icon: <Eye className="w-4 h-4" /> },
-  { id: 'disclaimer', number: '19', title: 'Disclaimer', icon: <ShieldCheck className="w-4 h-4" /> },
-  { id: 'contact', number: '20', title: 'Contact Us', icon: <Mail className="w-4 h-4" /> },
+  { id: 'advertising', number: '14', title: 'Advertising on Our Website', icon: <Globe className="w-4 h-4" /> },
+  { id: 'third-party', number: '15', title: 'Third-Party Services', icon: <Globe className="w-4 h-4" /> },
+  { id: 'transfers', number: '16', title: 'International Data Transfers', icon: <Globe className="w-4 h-4" /> },
+  { id: 'deletion', number: '17', title: 'Account Deletion', icon: <Trash2 className="w-4 h-4" /> },
+  { id: 'notifications', number: '18', title: 'Notifications', icon: <Bell className="w-4 h-4" /> },
+  { id: 'changes', number: '19', title: 'Changes to This Policy', icon: <Eye className="w-4 h-4" /> },
+  { id: 'disclaimer', number: '20', title: 'Disclaimer', icon: <ShieldCheck className="w-4 h-4" /> },
+  { id: 'contact', number: '21', title: 'Contact Us', icon: <Mail className="w-4 h-4" /> },
 ];
 
 export const PrivacyPolicy: React.FC<PrivacyPolicyProps> = ({ onBack }) => {
   const [activeSection, setActiveSection] = useState('about');
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
+
+  useDocumentMeta({
+    title: 'Privacy Policy | Rehabiphy',
+    description:
+      'How Rehabiphy collects, uses, stores and protects your personal and health information, including cookies and advertising on our website.',
+  });
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -158,8 +166,8 @@ export const PrivacyPolicy: React.FC<PrivacyPolicyProps> = ({ onBack }) => {
               We value your privacy and are committed to protecting your personal information. This policy explains how we collect, use, store, disclose, and protect your data.
             </p>
             <div className="flex flex-wrap items-center gap-4 mt-6 text-xs text-slate-400">
-              <span className="flex items-center gap-1.5"><Lock className="w-3.5 h-3.5 text-[#22C55E]" /> Effective Date: 23 July 2026</span>
-              <span className="flex items-center gap-1.5"><ShieldCheck className="w-3.5 h-3.5 text-[#22C55E]" /> Version 1.0</span>
+              <span className="flex items-center gap-1.5"><Lock className="w-3.5 h-3.5 text-[#22C55E]" /> Effective Date: 23 July 2026 · Updated 10 October 2026</span>
+              <span className="flex items-center gap-1.5"><ShieldCheck className="w-3.5 h-3.5 text-[#22C55E]" /> Version 1.1</span>
               <span className="flex items-center gap-1.5"><Globe className="w-3.5 h-3.5 text-[#22C55E]" /> DPDP Act, 2023 Compliant</span>
             </div>
           </motion.div>
@@ -410,19 +418,39 @@ export const PrivacyPolicy: React.FC<PrivacyPolicyProps> = ({ onBack }) => {
               </PolicySection>
 
               {/* Section 14 */}
-              <PolicySection id="third-party" number="14" title="Third-Party Services" icon={<Globe className="w-5 h-5" />}>
-                <p className="text-slate-600 text-sm mb-4">Rehabiphy may integrate with third-party services including, but not limited to:</p>
-                <TagList items={['PayU','Google Health Connect','Apple Health','Firebase','Google Analytics for Firebase','Google Maps','SMS gateway providers','Email service providers','Cloud hosting providers']} />
-                <p className="text-slate-500 text-sm mt-4">Each third-party service has its own privacy policy, and we encourage you to review them.</p>
+              <PolicySection id="advertising" number="14" title="Advertising on Our Website" icon={<Globe className="w-5 h-5" />}>
+                <p className="text-slate-600 text-sm mb-4 leading-relaxed">Article pages on the Rehabiphy website (rehabiphy.com) may show advertisements served by Google AdSense. This applies to the website only — the Rehabiphy mobile app does not use the health information in your account to show you ads.</p>
+                <ul className="space-y-2 mb-4">
+                  <ListItem>Third-party vendors, including Google, use cookies to serve ads based on your prior visits to this website or other websites.</ListItem>
+                  <ListItem>Google's use of advertising cookies enables it and its partners to serve ads to you based on your visits to this site and/or other sites on the Internet.</ListItem>
+                  <ListItem>These vendors may collect or receive information such as your IP address, device and browser details, and cookie identifiers in order to deliver and measure ads.</ListItem>
+                  <ListItem>We do not share the health, assessment or treatment information you store in the Rehabiphy app with advertising vendors.</ListItem>
+                </ul>
+                <p className="text-slate-600 text-sm mb-3 leading-relaxed">
+                  You can opt out of personalised advertising by visiting{' '}
+                  <a href="https://adssettings.google.com" target="_blank" rel="noreferrer" className="text-[#0F766E] font-medium hover:underline">Google Ads Settings</a>. You can also opt out of some third-party vendors' use of cookies for personalised advertising at{' '}
+                  <a href="https://www.aboutads.info/choices/" target="_blank" rel="noreferrer" className="text-[#0F766E] font-medium hover:underline">aboutads.info</a>.
+                </p>
+                <p className="text-slate-500 text-sm leading-relaxed">
+                  To learn how Google uses information from sites that use its services, see{' '}
+                  <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noreferrer" className="text-[#0F766E] font-medium hover:underline">How Google uses information from sites or apps that use our services</a>.
+                </p>
               </PolicySection>
 
               {/* Section 15 */}
-              <PolicySection id="transfers" number="15" title="International Data Transfers" icon={<Globe className="w-5 h-5" />}>
-                <p className="text-slate-600 text-sm leading-relaxed">If personal data is processed or stored outside India, we will implement appropriate safeguards in accordance with applicable laws.</p>
+              <PolicySection id="third-party" number="15" title="Third-Party Services" icon={<Globe className="w-5 h-5" />}>
+                <p className="text-slate-600 text-sm mb-4">Rehabiphy may integrate with third-party services including, but not limited to:</p>
+                <TagList items={['PayU','Google Health Connect','Apple Health','Firebase','Google Analytics for Firebase','Google AdSense (website)','Google Maps','SMS gateway providers','Email service providers','Cloud hosting providers']} />
+                <p className="text-slate-500 text-sm mt-4">Each third-party service has its own privacy policy, and we encourage you to review them.</p>
               </PolicySection>
 
               {/* Section 16 */}
-              <PolicySection id="deletion" number="16" title="Account Deletion" icon={<Trash2 className="w-5 h-5" />}>
+              <PolicySection id="transfers" number="16" title="International Data Transfers" icon={<Globe className="w-5 h-5" />}>
+                <p className="text-slate-600 text-sm leading-relaxed">If personal data is processed or stored outside India, we will implement appropriate safeguards in accordance with applicable laws.</p>
+              </PolicySection>
+
+              {/* Section 17 */}
+              <PolicySection id="deletion" number="17" title="Account Deletion" icon={<Trash2 className="w-5 h-5" />}>
                 <p className="text-slate-600 text-sm mb-4">Users may request account deletion through the app or by contacting us. After verification:</p>
                 <ul className="space-y-2">
                   <ListItem>Personal information will be deleted or anonymized, except where legal obligations require retention.</ListItem>
@@ -430,8 +458,8 @@ export const PrivacyPolicy: React.FC<PrivacyPolicyProps> = ({ onBack }) => {
                 </ul>
               </PolicySection>
 
-              {/* Section 17 */}
-              <PolicySection id="notifications" number="17" title="Notifications" icon={<Bell className="w-5 h-5" />}>
+              {/* Section 18 */}
+              <PolicySection id="notifications" number="18" title="Notifications" icon={<Bell className="w-5 h-5" />}>
                 <p className="text-slate-600 text-sm mb-4">Rehabiphy may send:</p>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-4">
                   {['Appointment reminders','Exercise reminders','Medication reminders (if enabled)','Health tips','Promotional offers','Coin and reward updates','Habit reminders','System announcements'].map(item => (
@@ -441,20 +469,20 @@ export const PrivacyPolicy: React.FC<PrivacyPolicyProps> = ({ onBack }) => {
                 <p className="text-slate-500 text-sm">You can manage notification preferences in the app settings.</p>
               </PolicySection>
 
-              {/* Section 18 */}
-              <PolicySection id="changes" number="18" title="Changes to This Privacy Policy" icon={<Eye className="w-5 h-5" />}>
+              {/* Section 19 */}
+              <PolicySection id="changes" number="19" title="Changes to This Privacy Policy" icon={<Eye className="w-5 h-5" />}>
                 <p className="text-slate-600 text-sm leading-relaxed">We may update this Privacy Policy from time to time. Material changes will be communicated through the app, website, email, or other appropriate means. The updated version will become effective on the date specified at the top of this policy.</p>
               </PolicySection>
 
-              {/* Section 19 */}
-              <PolicySection id="disclaimer" number="19" title="Disclaimer" icon={<ShieldCheck className="w-5 h-5" />}>
+              {/* Section 20 */}
+              <PolicySection id="disclaimer" number="20" title="Disclaimer" icon={<ShieldCheck className="w-5 h-5" />}>
                 <div className="p-4 bg-amber-50 border border-amber-200 rounded-xl text-sm text-amber-800 leading-relaxed">
                   Rehabiphy provides technology-enabled healthcare support and wellness services. AI-generated suggestions, educational content, and wellness recommendations are intended for informational purposes only and should not be considered a substitute for professional medical diagnosis, treatment, or emergency care. Always seek advice from a qualified healthcare professional regarding medical conditions or treatment decisions.
                 </div>
               </PolicySection>
 
-              {/* Section 20 */}
-              <PolicySection id="contact" number="20" title="Contact Us" icon={<Mail className="w-5 h-5" />}>
+              {/* Section 21 */}
+              <PolicySection id="contact" number="21" title="Contact Us" icon={<Mail className="w-5 h-5" />}>
                 <p className="text-slate-600 text-sm mb-5">If you have any questions, concerns, requests, or complaints regarding this Privacy Policy, please contact:</p>
                 <div className="glass-card rounded-2xl p-6 space-y-3">
                   <p className="font-bold text-slate-800">Rehabiphy Health Technologies Private Limited</p>
@@ -496,7 +524,7 @@ export const PrivacyPolicy: React.FC<PrivacyPolicyProps> = ({ onBack }) => {
       {/* Footer */}
       <footer className="bg-slate-950 text-slate-400 py-8 border-t border-slate-800 text-center text-xs">
         <p>© {new Date().getFullYear()} Rehabiphy Health Technologies Private Limited. All rights reserved.</p>
-        <p className="mt-1 text-slate-500">Privacy Policy • Version 1.0 • Effective 23 July 2026</p>
+        <p className="mt-1 text-slate-500">Privacy Policy • Version 1.1 • Updated 10 October 2026</p>
       </footer>
     </div>
   );

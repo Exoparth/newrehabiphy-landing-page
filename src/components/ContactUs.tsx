@@ -15,6 +15,7 @@ import {
   ChevronRight,
 } from 'lucide-react';
 import { RehabiphyLogo } from './RehabiphyLogo';
+import { useDocumentMeta } from '../lib/useDocumentMeta';
 
 interface ContactUsProps {
   onBack: () => void;
@@ -48,6 +49,12 @@ export const ContactUs: React.FC<ContactUsProps> = ({ onBack }) => {
   });
   const [formStatus, setFormStatus] = useState<FormStatus>('idle');
   const [statusMessage, setStatusMessage] = useState('');
+
+  useDocumentMeta({
+    title: 'Contact Us | Rehabiphy',
+    description:
+      'Get in touch with the Rehabiphy team in Lucknow, India — support, partnerships and general enquiries about our physiotherapy app.',
+  });
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -462,7 +469,7 @@ export const ContactUs: React.FC<ContactUsProps> = ({ onBack }) => {
 
                 <p className="text-[11px] text-slate-400 text-center leading-relaxed">
                   By submitting this form, you agree to our{' '}
-                  <a href="#/privacy" className="text-[#0F766E] hover:underline font-medium">
+                  <a href="/privacy" className="text-[#0F766E] hover:underline font-medium">
                     Privacy Policy
                   </a>
                   . We'll never share your information with third parties.

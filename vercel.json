@@ -1,9 +1,17 @@
 {
+  "functions": {
+    "api/blog.js": { "includeFiles": "dist/index.html" }
+  },
   "rewrites": [
     { "source": "/verify", "destination": "/index.html" },
     { "source": "/ref", "destination": "/index.html" },
     { "source": "/share", "destination": "/index.html" },
-    { "source": "/blogs", "destination": "/index.html" },
-    { "source": "/blogs/:slug", "destination": "/index.html" }
+    { "source": "/about", "destination": "/index.html" },
+    { "source": "/contact", "destination": "/index.html" },
+    { "source": "/privacy", "destination": "/index.html" },
+    { "source": "/terms", "destination": "/index.html" },
+    { "source": "/sitemap.xml", "destination": "/api/sitemap" },
+    { "source": "/blogs", "destination": "/api/blog" },
+    { "source": "/blogs/:slug", "destination": "/api/blog?slug=:slug" }
   ]
 }

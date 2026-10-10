@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /verify
+Disallow: /provider/
+
+Sitemap: https://www.rehabiphy.com/sitemap.xml

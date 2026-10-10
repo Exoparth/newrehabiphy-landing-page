@@ -3,7 +3,9 @@ import { ArrowLeft, Clock, Smartphone } from 'lucide-react';
 import { ApiError } from '../../lib/apiClient';
 import { blogService } from '../../lib/blogService';
 import { prepareArticleHtml } from '../../lib/blogHtml';
-import { useDocumentMeta } from '../../lib/useDocumentMeta';
+import { readPrerendered } from '../../lib/prerendered';
+import { countWords, MIN_ARTICLE_WORDS, useAdSense } from '../../lib/useAdSense';
+import { SITE_URL, useDocumentMeta } from '../../lib/useDocumentMeta';
 import type { BlogDetail } from '../../types';
 import { formatBlogDate } from './blogFormat';
 
@@ -23,12 +25,16 @@ const BackToBlog: React.FC = () => (
 );
 
 export const BlogPostPage: React.FC<BlogPostPageProps> = ({ slug, onOpenDownloadModal }) => {
-  const [blog, setBlog] = useState<BlogDetail | null>(null);
-  const [status, setStatus] = useState<'loading' | 'ready' | 'notFound' | 'error'>('loading');
+  // The server embeds the article in the page (see api/blog.js), so a direct
+  // visit renders straight away; in-app navigation falls back to the API.
+  const [initial] = useState(() => readPrerendered('blog', (b) => b.slug === slug));
+  const [blog, setBlog] = useState<BlogDetail | null>(initial);
+  const [status, setStatus] = useState<'loading' | 'ready' | 'notFound' | 'error'>(initial ? 'ready' : 'loading');
   const [error, setError] = useState('');
   const [attempt, setAttempt] = useState(0);
 
   useEffect(() => {
+    if (initial && attempt === 0) return;
     const controller = new AbortController();
     setStatus('loading');
     setBlog(null);
@@ -45,7 +51,7 @@ export const BlogPostPage: React.FC<BlogPostPageProps> = ({ slug, onOpenDownload
         setStatus('error');
       });
     return () => controller.abort();
-  }, [slug, attempt]);
+  }, [slug, attempt, initial]);
 
   useEffect(() => {
     window.scrollTo({ top: 0 });
@@ -53,10 +59,15 @@ export const BlogPostPage: React.FC<BlogPostPageProps> = ({ slug, onOpenDownload
 
   const html = useMemo(() => (blog ? prepareArticleHtml(blog.content) : ''), [blog]);
 
+  // Very short posts are thin content: keep ads and search engines off them.
+  const isThin = !!blog && countWords(blog.content) < MIN_ARTICLE_WORDS;
+  useAdSense(status === 'ready' && !!blog && !isThin);
+
   useDocumentMeta({
     title: blog ? `${blog.title} | Rehabiphy` : status === 'notFound' ? 'Article not found | Rehabiphy' : 'Rehabiphy Blog',
     description: blog?.excerpt || undefined,
     image: blog?.coverImage,
+    noindex: status === 'notFound' || status === 'error' || isThin,
     jsonLd: blog
       ? {
           '@context': 'https://schema.org',
@@ -66,8 +77,9 @@ export const BlogPostPage: React.FC<BlogPostPageProps> = ({ slug, onOpenDownload
           image: blog.coverImage || undefined,
           datePublished: blog.publishedAt,
           dateModified: blog.updatedAt,
-          mainEntityOfPage: `${window.location.origin}/blogs/${blog.slug}`,
-          publisher: { '@type': 'Organization', name: 'Rehabiphy' },
+          mainEntityOfPage: `${SITE_URL}/blogs/${blog.slug}`,
+          author: { '@type': 'Organization', name: 'Rehabiphy Team', url: `${SITE_URL}/about` },
+          publisher: { '@type': 'Organization', name: 'Rehabiphy', url: SITE_URL },
         }
       : undefined,
   });
@@ -124,6 +136,13 @@ export const BlogPostPage: React.FC<BlogPostPageProps> = ({ slug, onOpenDownload
             {blog.title}
           </h1>
           <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm font-medium text-slate-500">
+            <span>
+              By the{' '}
+              <a href="/about" className="text-[#0F766E] hover:underline">
+                Rehabiphy Team
+              </a>
+            </span>
+            <span className="w-1 h-1 rounded-full bg-slate-300" />
             <time dateTime={blog.publishedAt}>{formatBlogDate(blog.publishedAt)}</time>
             <span className="w-1 h-1 rounded-full bg-slate-300" />
             <span className="inline-flex items-center gap-1">
@@ -143,6 +162,21 @@ export const BlogPostPage: React.FC<BlogPostPageProps> = ({ slug, onOpenDownload
 
         {/* Server-sanitized HTML — see lib/blogHtml.ts */}
         <div className="blog-content mt-8" dangerouslySetInnerHTML={{ __html: html }} />
+
+        <footer className="mt-10 pt-6 border-t border-slate-200 text-sm text-slate-500 leading-relaxed">
+          <p>
+            <strong className="text-slate-700">Medical disclaimer:</strong> This article is general information, not
+            medical advice, and is not a substitute for an assessment by a qualified healthcare professional. If you
+            are in severe pain, recovering from surgery, or your symptoms are getting worse, see a doctor or
+            physiotherapist before starting any exercise.
+          </p>
+          <p className="mt-3">
+            Written by the Rehabiphy team.{' '}
+            <a href="/about" className="text-[#0F766E] font-semibold hover:underline">
+              How we write our articles
+            </a>
+          </p>
+        </footer>
       </article>
 
       <aside className="mt-10 rounded-3xl bg-gradient-to-br from-[#0F766E] to-[#115E59] text-white p-8 sm:p-10 text-center shadow-lg shadow-[#0F766E]/20">

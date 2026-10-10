@@ -10,13 +10,13 @@ export const WhyRehabiphy: React.FC = () => {
     {
       id: 'ai-vision',
       title: '3D Computer Vision Joint Mesh',
-      subtitle: 'Sub-Degree Motion Science',
-      description: 'Your smartphone camera turns into a clinical movement lab. Our AI models trace 33 3D skeletal landmarks in real-time, calculating joint flexion velocity, torque, and compensatory form deviations with 99.2% accuracy.',
+      subtitle: 'Camera-Based Motion Science',
+      description: 'Your smartphone camera turns into a clinical movement lab. Our AI models trace 33 3D skeletal landmarks in real-time, calculating joint angles and compensatory form deviations as you move.',
       icon: Sparkles,
       angle: 172,
       metrics: [
-        { label: 'Tracking Accuracy', value: '99.2%' },
-        { label: 'Latency', value: '< 18ms' },
+        { label: 'Tracking', value: 'Real-Time' },
+        { label: 'Hardware', value: 'Phone Camera' },
         { label: 'Pose Points', value: '33 Mesh Nodes' },
       ],
       highlights: [
@@ -33,8 +33,8 @@ export const WhyRehabiphy: React.FC = () => {
       icon: Users,
       angle: 135,
       metrics: [
-        { label: 'Clinical Vetting', value: 'Top 1%' },
-        { label: 'Availability', value: '24/7 Messaging' },
+        { label: 'Physiotherapists', value: 'Licensed' },
+        { label: 'Support', value: 'In-App Messaging' },
         { label: 'Care Model', value: 'Hybrid & Home' },
       ],
       highlights: [
@@ -47,11 +47,11 @@ export const WhyRehabiphy: React.FC = () => {
       id: 'habit-loops',
       title: '10-Minute Daily Micro-Habits',
       subtitle: 'Sustainable Habit Loops',
-      description: 'True recovery is built on daily consistency. Bite-sized 10-minute routines, gamified streak rewards, pain logging, and automated reminders yield an industry-leading 88% patient adherence rate.',
+      description: 'True recovery is built on daily consistency. Bite-sized 10-minute routines, gamified streak rewards, pain logging, and automated reminders are designed to help you stay on track with your plan.',
       icon: Activity,
       angle: 110,
       metrics: [
-        { label: 'Patient Adherence', value: '88%' },
+        { label: 'Reminders', value: 'Daily' },
         { label: 'Session Length', value: '10-15 Mins' },
         { label: 'Streak Bonus', value: '+10 Coins/Day' },
       ],
@@ -63,19 +63,19 @@ export const WhyRehabiphy: React.FC = () => {
     },
     {
       id: 'outcomes',
-      title: '3x Accelerated Recovery Timelines',
-      subtitle: 'Evidence-Based Outcomes',
-      description: 'By merging continuous camera posture audits with weekly therapist plan recalibrations, Rehabiphy patients regain full range of motion up to 3 times faster than standard clinic-only care.',
+      title: 'Progress You Can See',
+      subtitle: 'Measured Recovery Tracking',
+      description: 'By merging continuous camera posture audits with weekly therapist plan recalibrations, Rehabiphy gives you and your physiotherapist a clear, shared picture of how your range of motion is changing week to week.',
       icon: TrendingUp,
       angle: 168,
       metrics: [
-        { label: 'Healing Speed', value: '3x Faster' },
-        { label: 'Re-Injury Reduction', value: '65%' },
+        { label: 'Plan Reviews', value: 'Weekly' },
+        { label: 'Tracking', value: 'Range of Motion' },
         { label: 'Biometric Export', value: 'Surgeon Ready' },
       ],
       highlights: [
         'Surgeon-ready biometric PDF progress exports',
-        'Reduced post-operative recovery timelines',
+        'Structured post-operative recovery programs',
         'Continuous clinical tracking between appointments'
       ]
     }

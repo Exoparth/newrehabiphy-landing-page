@@ -103,16 +103,16 @@ export const Hero: React.FC<HeroProps> = ({
             <div className="pt-6 border-t border-slate-200/60 grid grid-cols-3 gap-4 max-w-xl mx-auto lg:mx-0 text-left">
               <div className="space-y-0.5">
                 <div className="flex items-center gap-1 text-slate-900 font-extrabold text-xl font-heading">
-                  94<span className="text-[#0F766E]">%</span>
+                  <span>AI</span>
                 </div>
-                <p className="text-xs text-slate-500 font-medium">Faster Mobility Recovery</p>
+                <p className="text-xs text-slate-500 font-medium">Camera-Based Motion Feedback</p>
               </div>
 
               <div className="space-y-0.5">
                 <div className="flex items-center gap-1 text-slate-900 font-extrabold text-xl font-heading">
-                  4.9<Star className="w-4 h-4 fill-amber-400 text-amber-400" />
+                  <span>1-on-1</span>
                 </div>
-                <p className="text-xs text-slate-500 font-medium">10,000+ Recovered Patients</p>
+                <p className="text-xs text-slate-500 font-medium">Licensed Physiotherapists</p>
               </div>
 
               <div className="space-y-0.5">

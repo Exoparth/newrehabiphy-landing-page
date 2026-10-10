@@ -24,30 +24,19 @@ export const Navbar: React.FC<NavbarProps> = ({
   }, []);
 
   const handleNavLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    if (href.startsWith('#/')) {
-      setMobileMenuOpen(false);
-      return;
-    }
+    setMobileMenuOpen(false);
 
+    // Page links (/blogs, /about) are routed by App; only in-page anchors are handled here.
     if (href.startsWith('#')) {
       e.preventDefault();
-      setMobileMenuOpen(false);
 
-      const isSubpage = window.location.hash === '#/privacy' || 
-                        window.location.hash === '#/terms' || 
-                        window.location.hash === '#/contact';
-
-      if (isSubpage) {
-        window.location.hash = href;
-      } else {
-        const targetId = href.substring(1);
-        const element = document.getElementById(targetId);
-        if (element) {
-          setTimeout(() => {
-            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            window.history.pushState(null, '', href);
-          }, 280);
-        }
+      const targetId = href.substring(1);
+      const element = document.getElementById(targetId);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          window.history.pushState(null, '', href);
+        }, 280);
       }
     }
   };
@@ -56,10 +45,11 @@ export const Navbar: React.FC<NavbarProps> = ({
     { name: 'Features', href: '#features' },
     { name: 'Why Rehabiphy', href: '#why-rehabiphy' },
     { name: 'How It Works', href: '#how-it-works' },
+    { name: 'Posture Scan', href: '#posture-assessment' },
     { name: 'For Patients', href: '#patients' },
-    { name: 'Testimonials', href: '#testimonials' },
     { name: 'Blog', href: '/blogs' },
-    { name: 'Contact', href: '#/contact' },
+    { name: 'About', href: '/about' },
+    { name: 'Contact', href: '/contact' },
   ];
 
   return (
@@ -74,7 +64,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         <div className="flex items-center justify-between gap-4">
 
           {/* Logo */}
-          <a href="#" className="group flex items-center shrink-0 transition-transform hover:scale-[1.02]">
+          <a href="/" className="group flex items-center shrink-0 transition-transform hover:scale-[1.02]">
             <RehabiphyLogo variant="light" showTagline={false} layout="horizontal" iconSize={34} />
           </a>
 

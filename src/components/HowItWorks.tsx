@@ -166,7 +166,7 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({
 
             <div className="pt-3 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400 font-mono">
               <span>Cloud Sync: Active</span>
-              <span className="text-[#22C55E] font-bold">99.8% Accuracy</span>
+              <span className="text-[#22C55E] font-bold">Illustrative Preview</span>
             </div>
           </div>
 

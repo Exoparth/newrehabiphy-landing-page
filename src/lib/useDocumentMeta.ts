@@ -5,7 +5,11 @@ interface DocumentMeta {
   description?: string;
   image?: string | null;
   jsonLd?: Record<string, unknown>;
+  noindex?: boolean;
 }
+
+// Canonical host, so www / non-www and old #/ links all point at one URL.
+export const SITE_URL = 'https://www.rehabiphy.com';
 
 function setMeta(attr: 'name' | 'property', key: string, content: string): () => void {
   let el = document.head.querySelector<HTMLMetaElement>(`meta[${attr}="${key}"]`);
@@ -23,16 +27,37 @@ function setMeta(attr: 'name' | 'property', key: string, content: string): () =>
   };
 }
 
-// Sets the tab title / description / social tags for a page and restores the
-// previous values when the page unmounts.
-export function useDocumentMeta({ title, description, image, jsonLd }: DocumentMeta) {
+function setCanonical(href: string): () => void {
+  let el = document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+  const created = !el;
+  const previous = el?.getAttribute('href') ?? null;
+  if (!el) {
+    el = document.createElement('link');
+    el.rel = 'canonical';
+    document.head.appendChild(el);
+  }
+  el.setAttribute('href', href);
+  return () => {
+    if (created) el!.remove();
+    else if (previous !== null) el!.setAttribute('href', previous);
+  };
+}
+
+// Sets the tab title / description / canonical / social tags for a page and
+// restores the previous values when the page unmounts.
+export function useDocumentMeta({ title, description, image, jsonLd, noindex }: DocumentMeta) {
   const jsonLdText = jsonLd ? JSON.stringify(jsonLd) : '';
 
   useEffect(() => {
     const previousTitle = document.title;
     document.title = title;
 
-    const cleanups: Array<() => void> = [setMeta('property', 'og:title', title)];
+    const path = window.location.pathname.replace(/\/+$/, '');
+    const cleanups: Array<() => void> = [
+      setMeta('property', 'og:title', title),
+      setCanonical(`${SITE_URL}${path || '/'}`),
+      setMeta('name', 'robots', noindex ? 'noindex, follow' : 'index, follow'),
+    ];
     if (description) {
       cleanups.push(setMeta('name', 'description', description), setMeta('property', 'og:description', description));
     }
@@ -51,5 +76,5 @@ export function useDocumentMeta({ title, description, image, jsonLd }: DocumentM
       cleanups.forEach((fn) => fn());
       script?.remove();
     };
-  }, [title, description, image, jsonLdText]);
+  }, [title, description, image, jsonLdText, noindex]);
 }

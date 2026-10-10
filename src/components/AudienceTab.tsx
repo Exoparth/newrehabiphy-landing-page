@@ -83,9 +83,9 @@ export const AudienceTab: React.FC<AudienceTabProps> = ({
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
                   {[
                     { title: 'Home Visits & Video Calls', desc: 'Book doorstep visits or HD video consultations at your preferred time.' },
-                    { title: 'Sub-Degree Camera AI', desc: 'Real-time joint angle checking so you perform every rep safely.' },
+                    { title: 'Camera-Based Motion AI', desc: 'Real-time joint angle checking so you perform every rep safely.' },
                     { title: '10-Min Habit Streaks', desc: 'Bite-sized daily micro-routines that fit into busy work schedules.' },
-                    { title: 'Insurance Receipts', desc: 'Receive itemized medical receipts for HSA/FSA & health insurance claims.' }
+                    { title: 'Insurance Receipts', desc: 'Receive itemized receipts you can submit with health insurance claims.' }
                   ].map((item, idx) => (
                     <div key={idx} className="p-4 bg-[#F8FFFC] rounded-2xl border border-[#0F766E]/15 space-y-1">
                       <div className="flex items-center gap-2 font-bold text-slate-900 text-sm font-heading">
@@ -111,21 +111,21 @@ export const AudienceTab: React.FC<AudienceTabProps> = ({
               <div className="lg:col-span-5 bg-slate-900 text-white rounded-3xl p-6 border border-slate-800 shadow-2xl space-y-4">
                 <div className="flex items-center justify-between pb-3 border-b border-slate-800">
                   <span className="text-xs font-bold text-[#22C55E]">PATIENT RECOVERY SCORECARD</span>
-                  <span className="text-[10px] font-mono text-slate-400">94% Success Rate</span>
+                  <span className="text-[10px] font-mono text-slate-400">What You Track</span>
                 </div>
 
                 <div className="p-4 bg-slate-950 rounded-2xl border border-slate-800 space-y-3">
                   <div className="flex justify-between items-center text-xs">
-                    <span className="text-slate-400">Avg. Recovery Acceleration</span>
-                    <span className="text-[#22C55E] font-bold font-mono">2.8x Faster</span>
+                    <span className="text-slate-400">Range of Motion</span>
+                    <span className="text-[#22C55E] font-bold font-mono">Weekly Trend</span>
                   </div>
                   <div className="flex justify-between items-center text-xs">
-                    <span className="text-slate-400">Exercise Form Accuracy</span>
-                    <span className="text-white font-bold font-mono">99.2% Correct</span>
+                    <span className="text-slate-400">Exercise Form</span>
+                    <span className="text-white font-bold font-mono">Live Feedback</span>
                   </div>
                   <div className="flex justify-between items-center text-xs">
-                    <span className="text-slate-400">Patient Satisfaction Score</span>
-                    <span className="text-amber-400 font-bold font-mono">4.9 / 5.0 ★</span>
+                    <span className="text-slate-400">Pain &amp; Swelling</span>
+                    <span className="text-amber-400 font-bold font-mono">Daily Log</span>
                   </div>
                 </div>
 
@@ -152,8 +152,8 @@ export const AudienceTab: React.FC<AudienceTabProps> = ({
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
                   {[
-                    { title: 'Automated ROM Charting', desc: 'AI auto-logs joint angles and rep compliance, saving 45 mins of daily paperwork.' },
-                    { title: '88% Patient Adherence', desc: 'Dynamic mobile habit tracking dramatically increases patient plan completion.' },
+                    { title: 'Automated ROM Charting', desc: 'AI auto-logs joint angles and rep compliance, cutting down on manual paperwork.' },
+                    { title: 'Patient Adherence Tools', desc: 'Mobile habit tracking and reminders help patients keep up with their plans.' },
                     { title: 'Flexible Home & Tele-Care', desc: 'Set your own consultation hours, virtual slots, or local home visit zones.' },
                     { title: 'Seamless Billing & EHR Sync', desc: 'Instant secure medical notes and automated payout transfers.' }
                   ].map((item, idx) => (
@@ -188,24 +188,24 @@ export const AudienceTab: React.FC<AudienceTabProps> = ({
                 <div className="space-y-3">
                   <div className="p-3 bg-slate-950 rounded-xl border border-slate-800 flex items-center justify-between">
                     <div>
-                      <p className="text-[10px] text-slate-400">Time Saved per Patient</p>
-                      <p className="text-lg font-bold text-[#22C55E] font-heading">45 Mins / Day</p>
+                      <p className="text-[10px] text-slate-400">Documentation</p>
+                      <p className="text-lg font-bold text-[#22C55E] font-heading">Automated ROM Notes</p>
                     </div>
                     <Clock className="w-6 h-6 text-[#22C55E]" />
                   </div>
 
                   <div className="p-3 bg-slate-950 rounded-xl border border-slate-800 flex items-center justify-between">
                     <div>
-                      <p className="text-[10px] text-slate-400">Patient Retention Rate</p>
-                      <p className="text-lg font-bold text-white font-heading">88% Adherence</p>
+                      <p className="text-[10px] text-slate-400">Patient Follow-Through</p>
+                      <p className="text-lg font-bold text-white font-heading">Adherence Tracking</p>
                     </div>
                     <TrendingUp className="w-6 h-6 text-[#0F766E]" />
                   </div>
 
                   <div className="p-3 bg-slate-950 rounded-xl border border-slate-800 flex items-center justify-between">
                     <div>
-                      <p className="text-[10px] text-slate-400">Average Practice Revenue</p>
-                      <p className="text-lg font-bold text-emerald-400 font-heading">+35% Growth</p>
+                      <p className="text-[10px] text-slate-400">Payments</p>
+                      <p className="text-lg font-bold text-emerald-400 font-heading">Automated Payouts</p>
                     </div>
                     <DollarSign className="w-6 h-6 text-emerald-400" />
                   </div>
