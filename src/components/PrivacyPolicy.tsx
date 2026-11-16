@@ -41,7 +41,7 @@ const sections: Section[] = [
   { id: 'rights', number: '11', title: 'Your Rights', icon: <Eye className="w-4 h-4" /> },
   { id: 'children', number: '12', title: "Children's Privacy", icon: <ShieldCheck className="w-4 h-4" /> },
   { id: 'cookies', number: '13', title: 'Cookies & Technologies', icon: <Globe className="w-4 h-4" /> },
-  { id: 'advertising', number: '14', title: 'Advertising on Our Website', icon: <Globe className="w-4 h-4" /> },
+  { id: 'advertising', number: '14', title: 'Advertising', icon: <Globe className="w-4 h-4" /> },
   { id: 'third-party', number: '15', title: 'Third-Party Services', icon: <Globe className="w-4 h-4" /> },
   { id: 'transfers', number: '16', title: 'International Data Transfers', icon: <Globe className="w-4 h-4" /> },
   { id: 'deletion', number: '17', title: 'Account Deletion', icon: <Trash2 className="w-4 h-4" /> },
@@ -58,7 +58,7 @@ export const PrivacyPolicy: React.FC<PrivacyPolicyProps> = ({ onBack }) => {
   useDocumentMeta({
     title: 'Privacy Policy | Rehabiphy',
     description:
-      'How Rehabiphy collects, uses, stores and protects your personal and health information, including cookies and advertising on our website.',
+      'How Rehabiphy collects, uses, stores and protects your personal and health information, including cookies and advertising in our app and on our website.',
   });
 
   useEffect(() => {
@@ -166,7 +166,7 @@ export const PrivacyPolicy: React.FC<PrivacyPolicyProps> = ({ onBack }) => {
               We value your privacy and are committed to protecting your personal information. This policy explains how we collect, use, store, disclose, and protect your data.
             </p>
             <div className="flex flex-wrap items-center gap-4 mt-6 text-xs text-slate-400">
-              <span className="flex items-center gap-1.5"><Lock className="w-3.5 h-3.5 text-[#22C55E]" /> Effective Date: 23 July 2026 · Updated 10 October 2026</span>
+              <span className="flex items-center gap-1.5"><Lock className="w-3.5 h-3.5 text-[#22C55E]" /> Effective Date: 23 July 2026 · Updated 16 November 2026</span>
               <span className="flex items-center gap-1.5"><ShieldCheck className="w-3.5 h-3.5 text-[#22C55E]" /> Version 1.1</span>
               <span className="flex items-center gap-1.5"><Globe className="w-3.5 h-3.5 text-[#22C55E]" /> DPDP Act, 2023 Compliant</span>
             </div>
@@ -253,7 +253,7 @@ export const PrivacyPolicy: React.FC<PrivacyPolicyProps> = ({ onBack }) => {
                     <TagList items={['Daily Steps','Walking Distance','Cycling Distance','Calories Burned','Active Minutes','Sleep Duration','Hydration Logs','Reading Habit','Breathing Exercise Completion','Workout Completion']} />
                   </InfoSubSection>
                   <InfoSubSection title="D. Device Information">
-                    <TagList items={['Device ID','Android ID','iOS Device Identifier','IP Address','Operating System','App Version','Device Model','Language','Time Zone','Network Information']} />
+                    <TagList items={['Device ID','Android ID','iOS Device Identifier','Advertising ID (Android AAID / iOS IDFA)','IP Address','Operating System','App Version','Device Model','Language','Time Zone','Network Information']} />
                   </InfoSubSection>
                   <InfoSubSection title="E. Location Information">
                     <p className="text-slate-600 text-sm mb-3">With your permission, we may collect precise GPS location, approximate location, city, and state. Location is used for home physiotherapy booking, nearby clinics, nearby physiotherapists, emergency support, and marketplace recommendations. You may disable location permission at any time.</p>
@@ -418,13 +418,26 @@ export const PrivacyPolicy: React.FC<PrivacyPolicyProps> = ({ onBack }) => {
               </PolicySection>
 
               {/* Section 14 */}
-              <PolicySection id="advertising" number="14" title="Advertising on Our Website" icon={<Globe className="w-5 h-5" />}>
-                <p className="text-slate-600 text-sm mb-4 leading-relaxed">Article pages on the Rehabiphy website (rehabiphy.com) may show advertisements served by Google AdSense. This applies to the website only — the Rehabiphy mobile app does not use the health information in your account to show you ads.</p>
+              <PolicySection id="advertising" number="14" title="Advertising" icon={<Globe className="w-5 h-5" />}>
+                <h4 className="font-semibold text-slate-800 text-sm mb-2">A. Ads in the Rehabiphy mobile app (Google AdMob)</h4>
+                <p className="text-slate-600 text-sm mb-4 leading-relaxed">The Rehabiphy mobile app shows advertisements served by Google AdMob, a Google LLC service. These include banner ads, full-screen (interstitial) ads, and optional rewarded video ads — you choose to watch a rewarded ad, and when you watch it to the end we credit Rehabiphy Coins to your account.</p>
+                <ul className="space-y-2 mb-4">
+                  <ListItem>To show and measure ads, the Google Mobile Ads SDK in the app collects and shares with Google: your device's advertising identifier (Android Advertising ID / iOS IDFA), IP address, approximate location derived from the IP address, device and operating-system information, app information, and how you interact with ads (for example impressions and taps).</ListItem>
+                  <ListItem>Google and its partners may use this information to show ads, including personalised ads based on your activity in this and other apps and websites, to measure ad performance, and to prevent fraud.</ListItem>
+                  <ListItem>We do not share the health, assessment, treatment, Health Connect or activity information in your Rehabiphy account with Google or any advertising partner, and we do not use it to choose the ads you see.</ListItem>
+                  <ListItem>Rehabiphy only records how many rewarded ads you watched each day, to credit coins and apply the daily limit.</ListItem>
+                </ul>
+                <p className="text-slate-600 text-sm mb-4 leading-relaxed">
+                  <b>Your choices:</b> on Android, go to Settings → Google → Ads (or Settings → Privacy → Ads) to delete or reset your advertising ID, or to opt out of personalised ads. On iOS, turn off “Allow Apps to Request to Track” under Settings → Privacy & Security → Tracking. You can also manage Google's ad personalisation at{' '}
+                  <a href="https://adssettings.google.com" target="_blank" rel="noreferrer" className="text-[#0F766E] font-medium hover:underline">Google Ads Settings</a>. If you opt out you will still see ads, but they will not be personalised.
+                </p>
+
+                <h4 className="font-semibold text-slate-800 text-sm mb-2">B. Ads on our website (Google AdSense)</h4>
+                <p className="text-slate-600 text-sm mb-4 leading-relaxed">Article pages on the Rehabiphy website (rehabiphy.com) may show advertisements served by Google AdSense.</p>
                 <ul className="space-y-2 mb-4">
                   <ListItem>Third-party vendors, including Google, use cookies to serve ads based on your prior visits to this website or other websites.</ListItem>
                   <ListItem>Google's use of advertising cookies enables it and its partners to serve ads to you based on your visits to this site and/or other sites on the Internet.</ListItem>
                   <ListItem>These vendors may collect or receive information such as your IP address, device and browser details, and cookie identifiers in order to deliver and measure ads.</ListItem>
-                  <ListItem>We do not share the health, assessment or treatment information you store in the Rehabiphy app with advertising vendors.</ListItem>
                 </ul>
                 <p className="text-slate-600 text-sm mb-3 leading-relaxed">
                   You can opt out of personalised advertising by visiting{' '}
@@ -432,15 +445,16 @@ export const PrivacyPolicy: React.FC<PrivacyPolicyProps> = ({ onBack }) => {
                   <a href="https://www.aboutads.info/choices/" target="_blank" rel="noreferrer" className="text-[#0F766E] font-medium hover:underline">aboutads.info</a>.
                 </p>
                 <p className="text-slate-500 text-sm leading-relaxed">
-                  To learn how Google uses information from sites that use its services, see{' '}
-                  <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noreferrer" className="text-[#0F766E] font-medium hover:underline">How Google uses information from sites or apps that use our services</a>.
+                  To learn how Google uses information from sites and apps that use its services, see{' '}
+                  <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noreferrer" className="text-[#0F766E] font-medium hover:underline">How Google uses information from sites or apps that use our services</a>, and Google's{' '}
+                  <a href="https://policies.google.com/privacy" target="_blank" rel="noreferrer" className="text-[#0F766E] font-medium hover:underline">Privacy Policy</a>.
                 </p>
               </PolicySection>
 
               {/* Section 15 */}
               <PolicySection id="third-party" number="15" title="Third-Party Services" icon={<Globe className="w-5 h-5" />}>
                 <p className="text-slate-600 text-sm mb-4">Rehabiphy may integrate with third-party services including, but not limited to:</p>
-                <TagList items={['PayU','Google Health Connect','Apple Health','Firebase','Google Analytics for Firebase','Google AdSense (website)','Google Maps','SMS gateway providers','Email service providers','Cloud hosting providers']} />
+                <TagList items={['PayU','Google Health Connect','Apple Health','Firebase','Google Analytics for Firebase','Google AdMob (mobile app ads)','Google AdSense (website ads)','Google Maps','SMS gateway providers','Email service providers','Cloud hosting providers']} />
                 <p className="text-slate-500 text-sm mt-4">Each third-party service has its own privacy policy, and we encourage you to review them.</p>
               </PolicySection>
 
@@ -524,7 +538,7 @@ export const PrivacyPolicy: React.FC<PrivacyPolicyProps> = ({ onBack }) => {
       {/* Footer */}
       <footer className="bg-slate-950 text-slate-400 py-8 border-t border-slate-800 text-center text-xs">
         <p>© {new Date().getFullYear()} Rehabiphy Health Technologies Private Limited. All rights reserved.</p>
-        <p className="mt-1 text-slate-500">Privacy Policy • Version 1.1 • Updated 10 October 2026</p>
+        <p className="mt-1 text-slate-500">Privacy Policy • Version 1.2 • Updated 16 November 2026</p>
       </footer>
     </div>
   );
