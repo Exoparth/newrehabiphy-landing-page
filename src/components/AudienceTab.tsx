@@ -82,7 +82,7 @@ export const AudienceTab: React.FC<AudienceTabProps> = ({
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
                   {[
-                    { title: 'Home Visits & Video Calls', desc: 'Book doorstep visits or HD video consultations at your preferred time.' },
+                    { title: 'Live Group Sessions & Video Calls', desc: 'Join live online group classes or HD video consultations from home.' },
                     { title: 'Camera-Based Motion AI', desc: 'Real-time joint angle checking so you perform every rep safely.' },
                     { title: '10-Min Habit Streaks', desc: 'Bite-sized daily micro-routines that fit into busy work schedules.' },
                     { title: 'Insurance Receipts', desc: 'Receive itemized receipts you can submit with health insurance claims.' }
@@ -154,7 +154,7 @@ export const AudienceTab: React.FC<AudienceTabProps> = ({
                   {[
                     { title: 'Automated ROM Charting', desc: 'AI auto-logs joint angles and rep compliance, cutting down on manual paperwork.' },
                     { title: 'Patient Adherence Tools', desc: 'Mobile habit tracking and reminders help patients keep up with their plans.' },
-                    { title: 'Flexible Home & Tele-Care', desc: 'Set your own consultation hours, virtual slots, or local home visit zones.' },
+                    { title: 'Flexible Online Care', desc: 'Set your own consultation hours, virtual slots and live group class batches.' },
                     { title: 'Seamless Billing & EHR Sync', desc: 'Instant secure medical notes and automated payout transfers.' }
                   ].map((item, idx) => (
                     <div key={idx} className="p-4 bg-[#F8FFFC] rounded-2xl border border-[#0F766E]/15 space-y-1">

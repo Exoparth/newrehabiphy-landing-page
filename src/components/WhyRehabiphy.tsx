@@ -29,17 +29,17 @@ export const WhyRehabiphy: React.FC = () => {
       id: 'physio-network',
       title: 'Qualified & Licensed Physiotherapists',
       subtitle: 'Clinical Excellence & Care',
-      description: 'Human clinical insight powers every decision. You are matched 1-on-1 with verified, licensed senior physiotherapists for hybrid tele-rehab video consultations or doorstep home visits.',
+      description: 'Human clinical insight powers every decision. You are matched 1-on-1 with verified, licensed senior physiotherapists for live online group sessions and 1-on-1 video consultations.',
       icon: Users,
       angle: 135,
       metrics: [
         { label: 'Physiotherapists', value: 'Licensed' },
         { label: 'Support', value: 'In-App Messaging' },
-        { label: 'Care Model', value: 'Hybrid & Home' },
+        { label: 'Care Model', value: '100% Online' },
       ],
       highlights: [
         'Direct 1-on-1 physio video consultations',
-        'Doorstep home visit physical care options',
+        'Live online group sessions led by physiotherapists',
         'Continuous plan adjustments based on AI data'
       ]
     },

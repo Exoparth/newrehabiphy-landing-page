@@ -15,7 +15,7 @@ const WHAT_WE_DO = [
   {
     icon: Video,
     title: 'Access to physiotherapists',
-    text: 'Patients can book video consultations or home visits with licensed physiotherapists, who set and adjust the exercise plan.',
+    text: 'Patients can join live online group sessions or book video consultations with licensed physiotherapists, who set and adjust the exercise plan.',
   },
   {
     icon: Users,

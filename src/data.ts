@@ -11,7 +11,7 @@ export const EXPERT_PHYSIOS: Physiotherapist[] = [
     rating: 4.9,
     reviewsCount: 340,
     avatar: 'https://images.unsplash.com/photo-1594824813566-788426a8d6b1?auto=format&fit=crop&q=80&w=250',
-    availability: 'Available Today (Video & Home Visit)',
+    availability: 'Available Today (Live Online)',
     location: 'Metropolitan Area'
   },
   {
@@ -25,7 +25,7 @@ export const EXPERT_PHYSIOS: Physiotherapist[] = [
     reviewsCount: 285,
     avatar: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=250',
     availability: 'Available Tomorrow',
-    location: 'Home Visit & Clinic'
+    location: 'Online Sessions'
   },
   {
     id: 'p3',
@@ -75,13 +75,13 @@ export const HOW_IT_WORKS_STEPS: HowItWorksStep[] = [
     step: 3,
     title: 'Connect Expert Physio',
     subtitle: 'Dedicated Specialist Match',
-    description: 'Get matched with a top-rated licensed physiotherapist. Book 1-on-1 HD video sessions or certified home visits.',
+    description: 'Get matched with a top-rated licensed physiotherapist. Join live online group sessions or book 1-on-1 video consultations, all from home.',
     iconName: 'Video',
-    details: ['Hand-picked qualified & licensed physiotherapists', 'Flexible video & in-person visits', 'Direct 24/7 physio messaging'],
+    details: ['Hand-picked qualified & licensed physiotherapists', 'Live online group sessions, 3x a week', 'Direct 24/7 physio messaging'],
     mockupData: {
       title: 'Pooja Patel, Licensed Physio',
       status: 'Live Video Session',
-      value: '1-on-1 Guided Care',
+      value: 'Live Online Group Class',
       badge: 'Step 3'
     }
   },
@@ -126,8 +126,8 @@ export const KEY_FEATURES_DATA: Feature[] = [
     icon: 'Users',
     bullets: [
       'Led live by qualified, licensed physiotherapists',
-      '3 classes a week in a Mon/Wed/Fri or Tue/Thu/Sat batch',
-      'Join from home, with easier options in every class'
+      '3 live classes a week, 30–45 minutes each',
+      'Individual screening before you enrol, plus 2 free trial classes'
     ],
     metrics: [
       { label: 'Format', value: 'Live Video' },
@@ -209,7 +209,7 @@ export const TESTIMONIALS_DATA: Testimonial[] = [
     age: 44,
     condition: 'Chronic Lumbar Sciatica',
     recoveryTime: 'Pain Free in 6 Weeks',
-    quote: 'I had debilitating lower back pain for 2 years that kept me off my feet. Home visits combined with the daily 10-minute AI habit tracker gave me my active life back without painkillers.',
+    quote: 'I had debilitating lower back pain for 2 years that kept me off my feet. Live online physio sessions combined with the daily 10-minute AI habit tracker gave me my active life back without painkillers.',
     avatar: 'https://images.unsplash.com/photo-1756376755233-d3abcd9a5edb?auto=format&fit=crop&q=80&w=200',
     rating: 5,
     physioName: 'Amit Malhotra, Licensed Physiotherapist',
