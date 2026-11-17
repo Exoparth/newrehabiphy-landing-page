@@ -119,19 +119,19 @@ export const KEY_FEATURES_DATA: Feature[] = [
     ]
   },
   {
-    id: 'home_visits',
-    title: 'Doorstep Certified Home Visits',
-    description: 'Get expert hands-on physiotherapy delivered directly to your home. Certified therapists bring specialized equipment and manual therapy tools.',
-    badge: 'In-Person Care',
-    icon: 'Home',
+    id: 'group_sessions',
+    title: 'Online Group Sessions',
+    description: 'Live, physiotherapist-led group classes on video for knee, back, shoulder and neck pain, women\'s pelvic & hormonal health, and elderly care. Expert guidance at a lower cost, with the energy of a group.',
+    badge: 'Live Group Classes',
+    icon: 'Users',
     bullets: [
-      'Fully background-checked & licensed physiotherapists',
-      'Sanitized, specialized rehab kit brought to you',
-      'Flexible booking including weekends & evenings'
+      'Led live by qualified, licensed physiotherapists',
+      '3 classes a week in a Mon/Wed/Fri or Tue/Thu/Sat batch',
+      'Join from home, with easier options in every class'
     ],
     metrics: [
-      { label: 'Care', value: 'At Home' },
-      { label: 'Booking', value: 'Flexible' }
+      { label: 'Format', value: 'Live Video' },
+      { label: 'Schedule', value: '3x / Week' }
     ]
   },
   {

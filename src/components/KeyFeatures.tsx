@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { KEY_FEATURES_DATA } from '../data';
 import { 
   Video, 
-  Home, 
+  Users,
   Sliders, 
   Activity, 
   Bot, 
@@ -32,8 +32,8 @@ export const KeyFeatures: React.FC = () => {
     switch (iconName) {
       case 'Video':
         return Video;
-      case 'Home':
-        return Home;
+      case 'Users':
+        return Users;
       case 'Sliders':
         return Sliders;
       case 'Activity':
@@ -98,7 +98,7 @@ export const KeyFeatures: React.FC = () => {
           </div>
 
           <p className="text-sm sm:text-base text-slate-600 max-w-md font-normal leading-relaxed">
-            Everything you need for full-spectrum rehabilitation: 1-on-1 specialist video care, doorstep physical visits, and live AI camera movement feedback.
+            Everything you need for full-spectrum rehabilitation: 1-on-1 specialist video care, live online group sessions, and real-time AI camera movement feedback.
           </p>
         </div>
 
