@@ -2,6 +2,8 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { WhyRehabiphy } from './components/WhyRehabiphy';
+import { PhysioServices } from './components/PhysioServices';
+import { FitnessPrograms } from './components/FitnessPrograms';
 import { HowItWorks } from './components/HowItWorks';
 import { PostureAssessment } from './components/PostureAssessment';
 import { KeyFeatures } from './components/KeyFeatures';
@@ -212,6 +214,12 @@ export default function App() {
 
         {/* 3. Why Rehabiphy Section */}
         <WhyRehabiphy />
+
+        {/* Physiotherapy services offered in the app */}
+        <PhysioServices />
+
+        {/* Rehabiphy Fitness programs */}
+        <FitnessPrograms />
 
         {/* 4. How It Works Section */}
         <HowItWorks

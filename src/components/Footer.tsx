@@ -68,6 +68,12 @@ export const Footer: React.FC<FooterProps> = ({
             <h4 className="text-sm font-bold text-white font-heading uppercase tracking-wider">Care Solutions</h4>
             <ul className="space-y-2 text-xs">
               <li>
+                <a href="#physiotherapy" className="hover:text-[#22C55E] transition-colors">Physiotherapy</a>
+              </li>
+              <li>
+                <a href="#fitness" className="hover:text-[#22C55E] transition-colors">Fitness Programs</a>
+              </li>
+              <li>
                 <a href="#patients" className="hover:text-[#22C55E] transition-colors">For Patients</a>
               </li>
               <li>

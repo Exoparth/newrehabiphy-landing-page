@@ -44,6 +44,8 @@ export const Navbar: React.FC<NavbarProps> = ({
   const navLinks = [
     { name: 'Features', href: '#features' },
     { name: 'Why Rehabiphy', href: '#why-rehabiphy' },
+    { name: 'Physiotherapy', href: '#physiotherapy' },
+    { name: 'Fitness', href: '#fitness' },
     { name: 'How It Works', href: '#how-it-works' },
     { name: 'Posture Scan', href: '#posture-assessment' },
     { name: 'For Patients', href: '#patients' },
